@@ -1,0 +1,143 @@
+.xenOverlay.chooserOverlay
+{
+	max-width: 700px;
+}
+
+	.chooserColumns
+	{
+		overflow: hidden; zoom: 1;
+		padding: 0;
+	}
+	
+		.chooserColumns li
+		{
+			float: left;
+			width: 33%;
+		}
+		
+			.chooserColumns.twoColumns li
+			{
+				width: 49.5%;
+			}
+		
+			.chooserColumns.oneColumns li
+			{
+				width: 100%;
+			}
+			
+			.chooserColumns.threeColumns li
+			{
+				width: 33%;
+			}
+			
+			.chooserColumns.fourColumns li
+			{
+				width: 24.5%;
+			}
+		
+			.chooserColumns li a
+			{
+				margin: 3px;
+				display: block;
+				padding: 5px 10px;
+				border-radius: 5px;
+				overflow: hidden; zoom: 1;
+			}
+			
+			.chooserColumns li a:hover
+			{
+				text-decoration: none;
+			}
+			
+			.chooserOverlay .secondaryContent a,
+			.chooserColumns li a:hover .title
+			{
+				color: @primaryLightish;
+			}
+			
+			.chooserColumns .icon
+			{
+				float: left;
+				display: block;
+				width: 64px;
+				height: 64px;
+				background: @primaryDark;
+				border: 1px solid @primaryDarker;
+				border-radius: 2px;
+				box-shadow: 1px 1px 4px rgba(0,0,0, 0.25);
+			}
+			
+				.styleChooser .icon
+				{
+					background-image: url('@imagePath/xenforo/widgets/style-preview.png');
+				}
+			
+			.chooserColumns .title,
+			.chooserColumns .description
+			{
+				margin-left: 76px;
+				display: block;
+			}
+			
+			.chooserColumns .title
+			{
+				font-size: 11pt;
+				color: @contentText;
+			}
+			
+				.chooserColumns .unselectable .title:after
+				{
+					content: " *";
+				}
+			
+			.chooserColumns .description
+			{
+				color: @mutedTextColor;
+				font-size: 11px;
+			}
+		
+	.chooserScroller
+	{
+		overflow: auto;
+		max-height: 200px;
+	}
+	
+		.chooserScroller li a
+		{
+			display: block;
+		}
+		
+		.chooserScroller li a:hover
+		{
+			background-color: @secondaryLightest;
+			text-decoration: none;
+		}
+		
+			.chooserScroller li a .info
+			{
+				font-size: 11px;
+				color: @contentText;	
+			}
+			
+.chooserConfirm
+{
+	text-align: center;
+}
+	
+	.chooserConfirm strong
+	{
+		display: block;
+		margin-top: 10px;
+		font-size: 18px;
+	}
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveNarrowWidth)
+{
+	.Responsive .chooserOverlay .chooserColumns li
+	{
+		width: auto;
+		float: none;
+	}
+}
+</xen:if>

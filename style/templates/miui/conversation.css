@@ -1,0 +1,42 @@
+.conversation_view .messageList
+{
+	border-left: none;
+	border-bottom: none;
+	padding-right: 10px;
+}
+
+	.conversation_view .message:first-child
+	{
+		border-top: none;
+	}
+
+	.conversation_view .message .newIndicator
+	{
+		margin-top: 0;
+		margin-right: -15px;
+	}
+	
+	.conversation_view .attachment
+	{
+		width: 49.5%;
+	}
+
+	.conversation_view .quickReply
+	{
+		border-top: none;
+		padding: 10px;
+		background-color: @content.background-color;
+		margin-bottom: 10px;
+	}
+	
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveWideWidth)
+{
+	.Responsive .conversation_view .messageList
+	{
+		border-right: none;
+		padding-right: 0;
+		border-top-right-radius: 0;
+	}
+}
+</xen:if>
