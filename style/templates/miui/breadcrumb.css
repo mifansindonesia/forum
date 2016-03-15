@@ -1,0 +1,208 @@
+.breadBoxTop,
+.breadBoxBottom
+{
+	@property "breadBox";
+	padding: 0;
+	overflow: hidden;
+	zoom: 1;
+	clear: both;
+	box-sizing: border-box;
+	@property "/breadBox";
+}
+
+.breadBoxTop
+{
+	border-radius: 2px;
+	margin: 10px 0;
+}
+
+.breadBoxBottom
+{
+	border-radius: 2px;
+	margin-top: 10px;
+}
+
+.breadBoxTop .topCtrl
+{
+	@property "breadBoxTopCtrl";
+	float: right;
+	line-height: 24px;
+	@property "/breadBoxTopCtrl";
+}
+
+.breadcrumb
+{
+	@property "breadcrumb";
+	font-size: 12px;
+	background-color: @contentBackground;
+	border: 1px solid @primaryLighterStill;
+	border-radius: 5px;
+	overflow: hidden;
+	zoom: 1;
+	max-width: 100%;
+	height: 32px;
+	@property "/breadcrumb";
+}
+
+.breadcrumb.showAll
+{
+	height: auto;
+}
+
+.breadcrumb .boardTitle
+{
+	@property "breadcrumbBoardTitle";
+	display: none;
+	@property "/breadcrumbBoardTitle";
+}
+
+.breadcrumb .crust
+{
+	@property "breadcrumbItemCrust";
+	display: block;
+	float: left;
+	position: relative;
+	zoom: 1;
+	max-width: 50%;
+	@property "/breadcrumbItemCrust";
+}
+
+.breadcrumb .crust a.crumb
+{
+	cursor: pointer;
+	@property "breadcrumbItemCrumb";
+	color: @contentText;
+	text-decoration: none;
+	padding: 0 10px 0 18px;
+	margin-bottom: -1px;
+	outline: 0 none;
+	-moz-outline-style: 0 none;
+	display: block;
+	_border-bottom: none;
+	line-height: 32px;
+	/*background-color: @primaryLightest;*/
+	@property "/breadcrumbItemCrumb";
+}
+
+	.breadcrumb .crust a.crumb > span
+	{
+		display: block;
+		text-overflow: ellipsis;
+		word-wrap: normal;
+		white-space: nowrap;
+		overflow: hidden;
+		max-width: 100%;
+	}
+
+	.breadcrumb .crust:first-child a.crumb,
+	.breadcrumb .crust.firstVisibleCrumb a.crumb
+	{
+		@property "breadcrumbItemFirstCrumb";
+		padding-left: 10px;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		@property "/breadcrumbItemFirstCrumb";
+	}
+	
+	.breadcrumb .crust:last-child a.crumb
+	{
+		@property "breadcrumbItemLastCrumb";
+		font-weight: 600;
+		@property "/breadcrumbItemLastCrumb";
+	}
+
+.breadcrumb .crust .arrow
+{
+	@property "breadcrumbItemArrowOuter";
+	border: 16px solid transparent;
+	border-right: 1px none black;
+	border-left-width: 10px;
+	border-left-color: #CCCCCC;
+	-moz-border-left-colors: #CCCCCC;
+	display: block;
+	position: absolute;
+	right: -11px;
+	top: 0px;
+	z-index: 50;
+	width: 0px;
+	height: 0px;
+	@property "/breadcrumbItemArrowOuter";
+}
+
+.breadcrumb .crust .arrow span
+{
+	@property "breadcrumbItemArrowInner";
+	border: 16px solid transparent;
+	border-right: 1px none black;
+	border-left-width: 10px;
+	border-left-color: @breadcrumb.background-color;
+	-moz-border-right-colors: @breadcrumb.background-color;
+	display: block;
+	position: absolute;
+	left: -11px;
+	top: -16px;
+	z-index: 51;
+	white-space: nowrap;
+	overflow: hidden;
+	text-indent: 9999px;
+	width: 0px;
+	height: 0px;
+	@property "/breadcrumbItemArrowInner";
+}
+
+.breadcrumb .crust:hover a.crumb
+{
+	@property "breadcrumbItemCrumbHover";
+	background-color: @primaryLightest;
+	@property "/breadcrumbItemCrumbHover";
+}
+
+.breadcrumb .crust:hover .arrow span
+{
+	border-left-color: @breadcrumbItemCrumbHover.background-color;
+}
+
+	.breadcrumb .crust .arrow
+	{
+		/* hide from IE6 */
+		_display: none;
+	}
+
+.breadcrumb .jumpMenuTrigger
+{
+	@property "breadcrumbJumpMenuTrigger";
+	background: transparent url('@imagePath/xenforo/xenforo-ui-sprite.png') no-repeat 0 0;
+	margin: 10px 10px 6px;
+	display: block;
+	float: right;
+	white-space: nowrap;
+	text-indent: 9999px;
+	overflow: hidden;
+	width: 16px;
+	height: 16px;
+	@property "/breadcrumbJumpMenuTrigger";
+}
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveNarrowWidth)
+{
+	.Responsive .breadBoxTop.withTopCtrl
+	{
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+	}
+
+	.Responsive .breadBoxTop.withTopCtrl nav
+	{
+		display: table-header-group;
+	}
+
+	.Responsive .breadBoxTop.withTopCtrl .topCtrl
+	{
+		display: table-footer-group;
+		margin-top: 5px;
+		text-align: right;
+	}
+}
+</xen:if>
