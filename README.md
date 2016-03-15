@@ -9,8 +9,8 @@
 - Build Data (internal)
 
 ## Kontribusi
-- Fork
-- Modifed
+- Fork // No Changed
+- Modifed // Live to join contact @Miyaku
 - Commit with changed
 - Pull Request or Brance
 
