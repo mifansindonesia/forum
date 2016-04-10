@@ -1,0 +1,67 @@
+<xen:include template="message">
+
+	<xen:map from="$post" to="$message" />
+
+	<xen:set var="$messageId">post-{$post.post_id}</xen:set>
+	
+	<xen:set var="$likesUrl">{xen:link posts/likes, $post}</xen:set>
+	
+	<xen:set var="$messageContentAfterTemplate"><xen:if is="{$post.attachments}"><xen:include template="attached_files" /></xen:if></xen:set>
+	
+	<xen:set var="$messageAfterTemplate">
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				<xen:if is="{$post.canInlineMod}"><input type="checkbox" name="posts[]" value="{$post.post_id}" class="InlineModCheck item" data-target="#post-{$post.post_id}" title="{xen:phrase select_this_post_by_x, 'name={$post.username}'}" /></xen:if>
+				<span class="item muted">
+					<span class="authorEnd"><xen:username user="$post" class="author" />,</span>
+					<a href="{xen:link threads/post-permalink, $thread, 'post={$post}'}" title="{xen:phrase permalink}" class="datePermalink"><xen:datetime time="$post.post_date" /></a>
+				</span>
+				<xen:hook name="post_private_controls" params="{xen:array 'post={$post}'}">
+				<xen:if is="{$post.canEdit}">
+					<a href="{xen:link posts/edit, $post}" class="item control edit {xen:if $xenOptions.messageInlineEdit, OverlayTrigger}"
+						data-href="{xen:link posts/edit-inline, $post}" data-overlayOptions="{&quot;fixed&quot;:false}"
+						data-messageSelector="#post-{$post.post_id}"><span></span>{xen:phrase edit}</a>
+					<xen:require js="js/xenforo/discussion.js" />
+				</xen:if>
+				<xen:if is="{$post.edit_count} && {$post.canViewHistory}"><a href="{xen:link posts/history, $post}" class="item control history ToggleTrigger"><span></span>{xen:phrase history}</a></xen:if>
+				<xen:if is="{$post.canDelete}"><a href="{xen:link posts/delete, $post}" class="item control delete OverlayTrigger"><span></span>{xen:phrase delete}</a></xen:if>
+				<xen:if is="{$post.canCleanSpam}"><a href="{xen:link spam-cleaner, $post}" class="item control deleteSpam OverlayTrigger"><span></span>{xen:phrase spam}</a></xen:if>
+				<xen:if is="{$canViewIps} AND {$post.ip_id}"><a href="{xen:link posts/ip, $post}" class="item control ip OverlayTrigger"><span></span>{xen:phrase ip}</a></xen:if>
+				
+				<xen:if is="{$post.canWarn}">
+					<a href="{xen:link members/warn, $post, 'content_type=post', 'content_id={$post.post_id}'}" class="item control warn"><span></span>{xen:phrase warn}</a>
+				<xen:elseif is="{$post.warning_id} && {$canViewWarnings}" />
+					<a href="{xen:link warnings, $post}" class="OverlayTrigger item control viewWarning"><span></span>{xen:phrase view_warning}</a>
+				</xen:if>
+				<xen:if is="{$post.canReport}">
+					<a href="{xen:link posts/report, $post}" class="OverlayTrigger item control report" data-cacheOverlay="false"><span></span>{xen:phrase report}</a>
+				</xen:if>
+				
+				</xen:hook>
+			</div>
+			
+			<div class="publicControls">
+				<a href="{xen:link threads/post-permalink, $thread, 'post={$post}'}" title="{xen:phrase permalink}" class="item muted postNumber hashPermalink OverlayTrigger" data-href="{xen:link posts/permalink, $post}">#{xen:calc '{$post.position} + 1'}</a>
+				<xen:hook name="post_public_controls" params="{xen:array 'post={$post}'}">
+				<xen:if is="{$post.canLike}">
+					<a href="{xen:link posts/like, $post}" class="LikeLink item control {xen:if $post.like_date, unlike, like}" data-container="#likes-post-{$post.post_id}"><span></span><span class="LikeLabel">{xen:if $post.like_date, {xen:phrase unlike}, {xen:phrase like}}</span></a>
+				</xen:if>
+				<xen:if is="{$canReply}">
+					<xen:if is="{$xenOptions.multiQuote}"><a href="{xen:link threads/reply, $thread, 'quote={$post.post_id}'}"
+						data-messageid="{$post.post_id}"
+						class="MultiQuoteControl JsOnly item control"
+						title="{xen:phrase toggle_multi_quote_tooltip}"><span></span><span class="symbol">{xen:phrase multiquote_add}</span></a></xen:if>
+					<a href="{xen:link threads/reply, $thread, 'quote={$post.post_id}'}"
+						data-postUrl="{xen:link posts/quote, $post}"
+						data-tip="#MQ-{$post.post_id}"
+						class="ReplyQuote item control reply"
+						title="{xen:phrase reply_quoting_this_message}"><span></span>{xen:phrase reply}</a>
+				</xen:if>
+				</xen:hook>
+			</div>
+		</div>
+	</xen:set>
+	
+</xen:include>
