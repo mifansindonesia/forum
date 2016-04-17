@@ -1,0 +1,43 @@
+/* Styling for hover-dismiss controls */
+
+.DismissParent .DismissCtrl
+{
+	position: absolute;
+	top: 12px;
+	right: 5px;
+	
+	display: block;
+	color: white;
+	width: 16px;
+	height: 16px;
+	line-height: 15px;
+	text-align: center;
+	font-size: 18px !important;
+	opacity: .4;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+	
+	font-size: 10px;
+	
+	overflow: hidden;
+	white-space: nowrap;
+	
+	cursor: pointer;
+}
+
+	.DismissParent:hover .DismissCtrl,
+	.Touch .DismissParent .DismissCtrl
+	{
+		opacity: 1;
+	}
+	
+		.DismissParent:hover .DismissCtrl:hover
+		{
+			background-position: -96px 0;
+		}
+		
+			.DismissParent:hover .DismissCtrl:active
+			{
+				background-position: -112px 0;
+			}
