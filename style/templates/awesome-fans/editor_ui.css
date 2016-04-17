@@ -1,0 +1,585 @@
+.hasJs .BbCodeWysiwygEditor
+{
+	visibility: hidden;
+}
+
+.redactor_box {
+	@property "rteContainer";
+	font-size: 0;
+	background-color: @contentBackground;
+	border: 1px solid @primaryLighterStill;
+	line-height: 0;
+	position: relative;
+	overflow: hidden;
+	@property "/rteContainer";
+}
+
+	.redactor_box .redactor_smilies
+	{
+		overflow: hidden; *zoom: 1;
+	}
+	
+		.redactor_box .redactor_smilies .tabs
+		{
+			min-height: 0;
+		}
+		
+		.redactor_box .redactor_smilies .smilieContainer
+		{
+			max-height: 150px;
+			overflow: auto;
+		}
+
+		.redactor_box .redactor_smilies .primaryContent,
+		.redactor_box .redactor_smilies .secondaryContent
+		{
+			border-bottom: none;
+		}
+		
+		.redactor_box .redactor_smilies .secondaryContent
+		{
+			border-top: @rteContainer.border-bottom-width @rteContainer.border-bottom-style @rteContainer.border-bottom-color;
+		}
+		
+		.redactor_box .redactor_smilies .tabs a
+		{
+			height: 18px;
+			line-height: 18px;
+			font-size: 11px;
+		}
+		
+
+		.redactor_box .redactor_smilies .smilieCategory li
+		{
+			display: inline-block;
+			margin: 0;
+			padding: 2px;
+			cursor: pointer;
+			line-height: 1.6;
+		}
+		
+	.redactor_box .draftNotice,
+	.redactor_box .placeholder
+	{
+		display: none;
+		position: relative;
+		line-height: 0;
+		font-size: 0;
+		z-index: 1;
+	}
+	
+	.redactor_box .draftNotice span
+	{
+		position: absolute;
+		right: 20px;
+		top: -30px;
+		float: right;
+		line-height: 14px;
+		font-size: 11px;
+		color: @mutedTextColor;
+		padding: 5px;
+		border-radius: 3px;
+		background: @contentBackground;
+		box-shadow: 1px 1px 4px @mutedTextColor;
+		opacity: .5;
+	}
+		
+	.redactor_box .placeholder span
+	{
+		line-height: 14px;
+
+		@property "messageText";
+		font-size: @fafontsizel;
+		font-family: @fa_primaryfont;
+		line-height: 1.7;
+		@property "/messageText";
+	
+		position: absolute;
+		left: 8px;
+		top: 8px;
+		color: @formElementPrompt.color;
+	}
+
+
+/* TOOLBAR */
+.redactor_toolbar {
+	@property "rteToolbar";
+	font-size: 0;
+	background-color: @primaryLightest;
+	padding: 0 0 0 2px;
+	margin: 0;
+	border-bottom: 1px solid @primaryLighterStill;
+	position: relative;
+	left: 0;
+	top: 0;
+	line-height: 0;
+	list-style: none;
+	overflow: hidden;
+	@property "/rteToolbar";
+}
+
+	.blendedEditor .redactor_box .redactor_toolbar
+	{
+		max-height: 68px;
+	}
+	
+	.blendedEditor .redactor_box.activated .redactor_toolbar
+	{
+		max-height: none;
+	}
+
+	.redactor_toolbar li {
+		float: left;
+		margin: 2px 1px;
+		margin-right: 0;
+		list-style: none;
+		outline: none;
+	}
+
+		.redactor_toolbar li.redactor_btn_right {
+			float: right;
+		}
+
+		.redactor_toolbar li a {
+			@property "rteToolbarButton";
+			font-size: 0;
+			text-decoration: none;
+			border: 1px solid transparent;
+			border-radius: 3px;
+			box-sizing: border-box;
+			display: block;
+			line-height: 0;
+			cursor: pointer;
+			zoom: 1;
+			outline: none;
+			text-indent: -9999px;
+			width: 24px;
+			height: 24px;
+			@property "/rteToolbarButton";
+		}
+			.redactor_toolbar li a:hover {
+				@property "rteToolbarButtonHover";
+				background-color: @contentBackground;
+				border-color: @primaryLighter;
+				@property "/rteToolbarButtonHover";
+			}
+
+			.redactor_toolbar li a:active, .redactor_toolbar li a.redactor_act {
+				@property "rteToolbarButtonActive";
+				background-color: @primaryLighterStill;
+				border: 1px solid @primaryLighter;
+				@property "/rteToolbarButtonActive";
+			}
+
+		.redactor_toolbar li li {
+			padding: 0;
+			margin: 1px;
+		}
+
+		.redactor_toolbar li.redactor_btn_group {
+			margin-left: 2px;
+			margin-right: 2px;
+		}
+
+			.redactor_toolbar li.redactor_btn_group ul {
+				@property "rteToolbarGroup";
+				background-color: @contentBackground;
+				padding: 1px;
+				margin: 0;
+				border: 1px solid @primaryLighterStill;
+				border-radius: 3px;
+				overflow: hidden;
+				*zoom: 1;
+				box-shadow: 1px 1px 1px rgba(255, 255, 255, .5);
+				@property "/rteToolbarGroup";
+			}
+	
+			<xen:if is="@rteFaded">
+				/* Fade toolbar when editor is not activated */
+				.blendedEditor .redactor_box .redactor_btn_group ul,
+				.blendedEditor .redactor_box iframe,
+				.blendedEditor .redactor_box .redactor_smilies li
+				{
+					opacity: 0.5;
+					-webkit-transition: opacity 0.3s ease-in-out;
+					-moz-transition: opacity 0.3s ease-in-out;
+					transition: opacity 0.3s ease-in-out;
+				}
+		
+				.blendedEditor .redactor_box.activated .redactor_btn_group ul,
+				.blendedEditor .redactor_box.activated iframe,
+				.blendedEditor .redactor_box.activated .redactor_smilies li
+				{
+					opacity: 1;
+				}
+			</xen:if>
+	
+		.redactor_toolbar li.redactor_separator {
+			float: left;
+			height: 32px;
+			border-left: 1px solid #d3d3d3;
+			border-right: 1px solid #f5f5f5;
+			padding: 0;
+			margin: 0 2px 0 3px;
+		}
+
+
+/*BUTTONS*/
+
+
+/* DROPDOWN */
+.redactor_dropdown {
+	top: 28px;
+	rtl-raw.left: 0;
+	z-index: 100004;
+	position: absolute;
+	width: 200px;
+	max-height: 150px;
+	overflow: auto;
+	background-color: @contentBackground;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	box-shadow: 0 2px 5px #ccc;
+	line-height: 1.5;
+	padding: 5px;
+}
+
+	.redactor_dropdown a
+	{
+		display: block;
+		color: @contentText;
+		padding: 3px 5px;
+		text-decoration: none;
+	}
+	
+	.redactor_dropdown a.icon
+	{
+		padding: 0px 0px 0px 32px;
+		height: 24px;
+		line-height: 24px;	
+	}
+	.redactor_dropdown a:hover {
+		text-decoration: none;
+		background-color: @primaryLightest;
+	}
+
+.redactor_separator_drop {
+	border-top: 1px solid #ddd;
+	padding: 0;
+	line-height: 0;
+	font-size: 0;
+}
+
+/* ColorPicker */
+
+.redactor_color_link {
+	padding: 0;
+	width: 15px;
+	height: 15px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2) inset;
+	border-radius: 4px;
+	float: left;
+	margin: 2px;
+	font-size: 0;
+	box-sizing: border-box;
+}
+
+.redactor_color_none {
+	font-size: 11px;
+	clear: both;
+}
+
+
+
+/* MODAL */
+#redactor_modal_overlay {
+	position: fixed;
+	margin: auto;
+	top: 0;
+	rtl-raw.left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 209998;
+
+	opacity: @overlayMaskOpacity;
+	filter: alpha(opacity='{xen:calc "floor(@overlayMaskOpacity * 100)"}');
+
+	background-color: @overlayMaskColor;
+}
+
+#redactor_modal {
+	padding: 0;
+	position: fixed;
+	top: 50%;
+  	z-index: 209999;
+}
+
+#redactor_modal_close {
+	overflow: hidden;
+	text-indent: -9999px;
+	cursor: pointer;
+	@property "overlayCloseControl";
+	font-size: 23px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 50%;
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 1.2;
+	text-indent: 0;
+	width: 16px;
+	height: 16px;
+	@property "/overlayCloseControl";
+}
+
+#redactor_tabs {
+	margin-bottom: 18px;
+	text-align: center;
+}
+
+	#redactor_tabs a {
+		display: inline-block;
+		border: 1px solid #d8d8d8;
+		padding: 4px 14px;
+		font-size: 12px;
+		background-color: #ccc;
+		text-decoration: none;
+		color: #555;
+		line-height: 1;
+		border-radius: 5px;
+		margin-right: 5px;
+	}
+
+		#redactor_tabs a:hover, #redactor_tabs a.redactor_tabs_act {
+			background-color: #eee;
+			padding: 5px 15px;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, .4) inset;
+			border: none;
+			text-shadow: 0 1px 0 #eee;
+			color: #777;
+			text-decoration: none;
+		}
+
+.redactor_editor_drop {
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border: 2px dashed #aaa;
+	color: #000;
+	background: rgba(190, 190, 190, .5);
+}
+
+	.redactor_editor_drop.dragDisabled
+	{
+		background: rgba(190, 140, 140, .5);
+		border-color: rgb(150, 75, 75);
+	}
+
+	.redactor_editor_drop span {
+		display: block;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		font-size: 18px;
+		line-height: 26px;
+		margin-top: -13px;
+	}
+
+	.redactor_editor_drop.hover {
+		display: block;
+	}
+
+
+/* Drag and Drop Area */
+.redactor_droparea {
+	position: relative;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+.redactor_droparea .redactor_dropareabox {
+	z-index: 1;
+	position: relative;
+    text-align: center;
+    width: 99%;
+    background-color: #fff;
+    padding: 60px 0;
+    border: 2px dashed #bbb;
+}
+.redactor_droparea .redactor_dropareabox, .redactor_dropalternative {
+    color: #555;
+    font-size: 12px;
+}
+.redactor_dropalternative {
+	margin: 4px 0 2px 0;
+}
+.redactor_dropareabox.hover {
+    background: #efe3b8;
+    border-color: #aaa;
+}
+.redactor_dropareabox.error {
+    background: #f7e5e5;
+    border-color: #dcc3c3;
+}
+.redactor_dropareabox.drop {
+    background: #f4f4ee;
+    border-color: #e0e5d6;
+}
+html .redactor_toolbar li a
+{
+text-indent: 0px;
+text-align: center;
+}
+html .redactor_toolbar li a:before, html .redactor_dropdown a:before
+{
+display: inline-block;
+font-family: FontAwesome;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+color: @contentText;
+line-height: 24px;
+}
+
+html .redactor_dropdown a
+{
+padding-left: 0 !important;
+}
+html .redactor_dropdown a:before
+{
+margin-right: 10px;
+}
+html .redactor_toolbar li a.redactor_btn_bold:before
+{
+content: "\f032";
+}
+html .redactor_toolbar li a.redactor_btn_italic:before
+{
+content: "\f033";
+}
+html .redactor_toolbar li a.redactor_btn_underline:before
+{
+content: "\f0cd";
+}
+html .redactor_toolbar li a.redactor_btn_fontcolor:before
+{
+content: "\f042";
+}
+html .redactor_toolbar li a.redactor_btn_fontsize:before
+{
+content: "\f034";
+}
+html .redactor_toolbar li a.redactor_btn_fontfamily:before
+{
+content: "\f031";
+}
+html .redactor_toolbar li a.redactor_btn_createlink:before
+{
+content: "\f0c1";
+}
+html .redactor_toolbar li a.redactor_btn_unlink:before
+{
+content: "\f127";
+}
+html .redactor_toolbar li a.redactor_btn_alignment:before
+{
+content: "\f036";
+}
+html .redactor_toolbar li a.redactor_btn_unorderedlist:before
+{
+content: "\f0ca";
+}
+html .redactor_toolbar li a.redactor_btn_orderedlist:before
+{
+content: "\f0cb";
+}
+html .redactor_toolbar li a.redactor_btn_outdent:before
+{
+content: "\f03b";
+}
+html .redactor_toolbar li a.redactor_btn_indent:before
+{
+content: "\f03c";
+}
+html .redactor_toolbar li a.redactor_btn_smilies:before
+{
+content: "\f118";
+}
+html .redactor_toolbar li a.redactor_btn_image:before
+{
+content: "\f03e";
+}
+html .redactor_toolbar li a.redactor_btn_media:before
+{
+content: "\f008";
+}
+html .redactor_toolbar li a.redactor_btn_insert:before
+{
+content: "\f067";
+}
+html .redactor_toolbar li a.redactor_btn_draft:before
+{
+content: "\f0c7";
+}
+html .redactor_toolbar li a.redactor_btn_undo:before
+{
+content: "\f0e2";
+}
+html .redactor_toolbar li a.redactor_btn_redo:before
+{
+content: "\f01e";
+}
+html .redactor_toolbar li a.redactor_btn_removeformat:before
+{
+content: "\f12d";
+}
+html .redactor_toolbar li a.redactor_btn_switchmode:before
+{
+content: "\f0f6";
+}
+html .redactor_dropdown a.alignLeft:before
+{
+content: "\f036";
+}
+html .redactor_dropdown a.alignCenter:before
+{
+content: "\f037";
+}
+html .redactor_dropdown a.alignRight:before
+{
+content: "\f038";
+}
+.redactor_dropdown a.quote:before
+{
+content: "\f10d";
+}
+.redactor_dropdown a.spoiler:before
+{
+content: "\f024";
+}
+.redactor_dropdown a.code:before
+{
+content: "\f121";
+}
+.redactor_dropdown a.strikethrough:before
+{
+content: "\f0cc";
+}
+.redactor_dropdown a.saveDraft:before
+{
+  content: "\f0c7";
+}
+.redactor_dropdown a.deleteDraft:before
+{
+  content: "\f014";
+}
+html .redactor_toolbar li a.redactor_btn_custom_gallery:before
+{
+content: "\f083";
+}
