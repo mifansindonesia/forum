@@ -1,0 +1,37 @@
+@media (max-width:@maxResponsiveWideWidth) {.Responsive .sidebar{width: auto;}}#BRCopyright{display:none;}
+@media (max-width:@maxResponsiveWideWidth) {.Responsive .sidebar{width: auto;}.debugInfo,.emoji1c {display:none}.message .messageContent .messageText img {height: auto;max-width:auto;}}
+.message .messageContent .messageText img {height: auto;max-width:40%;float:none;padding-right:2px;}
+.mayomi{font-size:inherit;height:3ex;width:3.1ex;min-height:20px;min-width:20px;display:inline-block;margin:-.2ex .15em .2ex;line-height:normal;vertical-align:middle}img.mayomi{width:auto}
+.debugInfo,.emoji1c a,#legal a{color:#565656}
+.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#fd6440;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}
+.messageUserBlock .extraUserInfo{opacity:0;max-height:0;overflow:hidden;transition:.5s ease-in}.messageUserInfo:hover .extraUserInfo{opacity:1;max-height:300px}
+
+/*
+.messageUserBlock .userBanner{opacity:0;max-height:0;overflow:hidden;transition:.5s ease-in}.messageUserInfo:hover .userBanner{opacity:1;max-height:300px}
+
+
+@media (max-width:@maxResponsiveWideWidth)
+{
+    html .messageUserBlock .extraUserInfo
+    {
+        opacity: 1;
+        height: auto;
+        transition: none;
+    }
+    .messageUserInfo:hover .extraUserInfo
+    {
+        height: auto;
+    }
+
+}
+
+
+.debugInfo, .debugInfo a, .debugInfo dt a, .debugInfo dd a {display:none}
+.navTabs .publicTabs {
+    float: right !important;
+}
+.navTabs .visitorTabs {
+    float: left !important;
+body #AjaxProgress {display: none !important;opacity: 0;width: 0;height: 0;}
+*/
+
