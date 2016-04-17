@@ -1,0 +1,21 @@
+	.messageNotices li
+	{
+		@property "messageNotice";
+		font-size: @fafontsizes;
+		background-color: @secondaryLighter;
+		padding: 5px;
+		margin: 10px 0;
+		border: 1px solid @secondaryLighter;
+		border-radius: @fa_borderradiuss;
+		line-height: 16px;
+		@property "/messageNotice";
+	}
+	
+		.messageNotices .icon
+		{
+			float: right;
+			width: 16px;
+			height: 16px;
+			font-size: 18px;
+		}
+	
