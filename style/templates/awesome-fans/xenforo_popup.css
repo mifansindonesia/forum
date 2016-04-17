@@ -1,0 +1,277 @@
+/* ***************************** */
+/* Popup Menus */
+
+.Popup
+{
+	position: relative;
+}
+
+	.Popup.inline
+	{
+		display: inline;
+	}
+	
+/** Popup menu trigger **/
+
+.Popup .arrowWidget
+{
+	/* circle-arrow-down */
+	@property "popupArrowClosed";
+	background-color: transparent;
+	margin-top: -5px;
+	margin-left: 2px;
+	display: inline-block;
+	*margin-top: 0;
+	vertical-align: middle;
+	width: 13px;
+	height: 14px;
+	@property "/popupArrowClosed";
+}
+
+.PopupOpen .arrowWidget
+{
+	/* circle-arrow-up */
+	@property "popupArrowOpen";
+	background-position: -16px 0;
+	@property "/popupArrowOpen";
+}
+
+.Popup .PopupControl,
+.Popup.PopupContainerControl
+{
+	display: inline-block;
+	cursor: pointer;
+}
+
+	.Popup .PopupControl:hover,
+	.Popup.PopupContainerControl:hover
+	{
+		@property "popupControlClosedHover";
+		color: @primaryMedium;
+		text-decoration: none;
+		background-color: @primaryLighterStill;
+		@property "/popupControlClosedHover";
+	}
+
+	.Popup .PopupControl:focus,
+	.Popup .PopupControl:active,
+	.Popup.PopupContainerControl:focus,
+	.Popup.PopupContainerControl:active
+	{
+		outline: 0;
+	}
+	
+	.Popup .PopupControl.PopupOpen,
+	.Popup.PopupContainerControl.PopupOpen
+	{
+		@property "popupControl";
+		color: @faintTextColor;
+		background-color: @primaryDark;
+		border-top-left-radius: @fa_borderradiuss;
+		border-top-right-radius: @fa_borderradiuss;
+		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 0px;
+		@property "/popupControl";
+	}
+	
+	.Popup .PopupControl.BottomControl.PopupOpen,
+	.Popup.PopupContainerControl.BottomControl.PopupOpen
+	{
+		border-top-left-radius: @popupControl.border-bottom-left-radius;
+		border-top-right-radius: @popupControl.border-bottom-right-radius;
+		border-bottom-left-radius: @popupControl.border-top-left-radius;
+		border-bottom-right-radius: @popupControl.border-top-left-radius;
+	}
+		
+		.Popup .PopupControl.PopupOpen:hover,
+		.Popup.PopupContainerControl.PopupOpen:hover
+		{
+			text-decoration: none;
+		}
+		
+/** Menu body **/
+
+.Menu
+{
+	/*background-color: @textCtrlBackground;*/
+	
+	@property "menu";
+	font-size: @fafontsizes;
+	border: 1px solid @primaryLight;
+	border-top: 5px solid @primaryLight;
+	overflow: hidden;
+	box-shadow: 0px 5px 5px rgba(0,0,0, 0.5);
+	@property "/menu";
+	
+	min-width: @menuMinWidth;
+	*width: @menuMinWidth;
+	
+	/* makes menus actually work... */
+	position: absolute;
+	z-index: 7500;
+	display: none;
+}
+
+/* allow menus to operate when JS is disabled */
+.Popup:hover .Menu
+{
+	display: block;
+}
+
+.Popup:hover .Menu.JsOnly
+{
+	display: none;
+}
+
+.Menu.BottomControl
+{
+	border-top-width: 1px;
+	border-bottom-width: 3px;
+	box-shadow: 0px 0px 0px transparent;
+}
+
+	.Menu > li > a,
+	.Menu .menuRow
+	{
+		display: block;
+	}
+
+.Menu.inOverlay
+{
+	z-index: 10000;
+}
+
+/* Menu header */
+
+.Menu .menuHeader
+{
+	overflow: hidden; zoom: 1;
+}
+
+.Menu .menuHeader h3
+{
+	@property "menuHeaderTitle";
+	font-size: @fafontsizel;
+	@property "/menuHeaderTitle";
+}
+
+.Menu .menuHeader .muted
+{
+	@property "menuHeaderSubtitle";
+	font-size: @fafontsizes;
+	@property "/menuHeaderSubtitle";
+}
+
+/* Standard menu sections */
+
+.Menu .primaryContent
+{
+	background-color: {xen:helper rgba, @primaryContent.background-color, 0.96};
+}
+
+.Menu .secondaryContent
+{
+	background-color: {xen:helper rgba, @secondaryContent.background-color, 0.96};
+}
+
+.Menu .sectionFooter
+{
+	background-color: {xen:helper rgba, @sectionFooter.background-color, 0.9};
+}
+
+/* Links lists */
+
+.Menu .blockLinksList
+{	
+	max-height: 400px;
+	overflow: auto;
+}
+
+/* form popups */
+
+.formPopup
+{
+	width: 250px;
+	background-color: @contentBackground;
+}
+
+	.formPopup form,
+	.formPopup .ctrlUnit
+	{
+		margin: 5px auto;
+	}
+	
+		.formPopup .ctrlUnit
+		{
+		}
+		
+	.formPopup .textCtrl,
+	.formPopup .button
+	{
+		width: 232px;
+	}
+		
+	.formPopup .ctrlUnit > dt label
+	{
+		display: block;
+		margin-bottom: 2px;
+	}
+		
+	.formPopup .submitUnit dd
+	{
+		text-align: center;
+	}
+	
+		.formPopup .ctrlUnit > dd .explain
+		{
+			margin: 2px 0 0;
+		}
+	
+	.formPopup .primaryControls
+	{
+		zoom: 1;
+		white-space: nowrap;
+		word-wrap: normal;
+		padding: 0 5px;
+	}
+	
+		.formPopup .primaryControls input.textCtrl
+		{
+			margin-bottom: 0;
+		}
+	
+	.formPopup .secondaryControls
+	{
+		padding: 0 5px;
+	}
+	
+		.formPopup .controlsWrapper
+		{
+			background: @primaryLighterStill none repeat-x top;
+			border-radius: 5px;
+			padding: 5px;
+			margin: 5px 0;
+			font-size: 11px;
+		}
+
+			.formPopup .controlsWrapper .textCtrl
+			{
+				width: 222px;
+			}
+	
+	.formPopup .advSearchLink
+	{
+		display: block;
+		text-align: center;
+		padding: 5px;
+		font-size: 11px;
+		border-radius: 5px;
+		border: 1px solid @primaryLighterStill;
+		background: @primaryLightest none repeat-x top;
+	}
+	
+		.formPopup .advSearchLink:hover
+		{
+			background-color: @primaryLighterStill;
+			text-decoration: none;
+		}
