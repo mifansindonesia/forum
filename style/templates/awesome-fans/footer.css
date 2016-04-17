@@ -1,0 +1,123 @@
+.footer .pageContent
+{
+	@property "footer";
+	font-size: @fafontsizes;
+	font-family: @fa_secondaryfont;
+	color: @facolor7;
+	background-color: @facolor3;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-bottom-right-radius: @fa_borderradiuss;
+	border-bottom-left-radius: @fa_borderradiuss;
+	overflow: hidden;
+	zoom: 1;
+	@property "/footer";
+}
+	
+	.footer a,
+	.footer a:visited
+	{
+		@property "footerLink";
+		color: @facolor7;
+		padding: 5px 8px;
+		display: block;
+		@property "/footerLink";
+	}
+	
+		.footer a:hover,
+		.footer a:active
+		{
+			@property "footerLinkHover";
+			color: @facolor2;
+			text-decoration: none;
+			@property "/footerLinkHover";
+		}
+
+	.footer .choosers
+	{
+		@property "footerLeftBlock";
+		padding-left: 5px;
+		float: left;
+		overflow: hidden;
+		zoom: 1;
+		@property "/footerLeftBlock";
+	}
+	
+		.footer .choosers dt
+		{
+			display: none;
+		}
+		
+		.footer .choosers dd
+		{
+			float: left;
+			<xen:if is="{$pageIsRtl}">*display: inline; *float: none; *zoom: 1;</xen:if>
+		}
+		
+	.footerLinks
+	{
+		@property "footerRightBlock";
+		padding-right: 5px;
+		float: right;
+		overflow: hidden;
+		zoom: 1;
+		@property "/footerRightBlock";
+	}
+	
+		.footerLinks li
+		{
+			float: left;
+			<xen:if is="{$pageIsRtl}">*display: inline; *float: none; *zoom: 1;</xen:if>
+		}
+		
+
+.footerLegal .pageContent
+{
+	font-size: 11px;
+	overflow: hidden; zoom: 1;
+	padding: 5px 5px 15px;
+	text-align: center;
+}
+	
+	#copyright
+	{
+		color: @dimmedTextColor;
+		float: left;
+	}
+	
+	#legal
+	{
+		float: right;
+	}
+	
+		#legal li
+		{
+			float: left;
+			<xen:if is="{$pageIsRtl}">*display: inline; *float: none; *zoom: 1;</xen:if>
+			margin-left: 10px;
+		}
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveMediumWidth)
+{
+	.Responsive .footerLinks a.globalFeed,
+	.Responsive .footerLinks a.topLink,
+	.Responsive .footerLinks a.homeLink
+	{
+		display: none;
+	}
+
+	.Responsive .footerLegal .debugInfo
+	{
+		clear: both;
+	}
+}
+
+@media (max-width:@maxResponsiveNarrowWidth)
+{
+	.Responsive #copyright span
+	{
+		display: none;
+	}
+}
+</xen:if>
