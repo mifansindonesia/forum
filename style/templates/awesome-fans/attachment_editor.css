@@ -1,0 +1,173 @@
+.AttachmentEditor
+{
+	clear: both;
+}
+
+.xenForm .ctrlUnit dd li.AttachedFile,
+.xenForm .ctrlUnit dd .AttachmentInsertAllBlock
+{
+	margin-top: 0;
+	margin-right: @ctrlUnitEdgeSpacer;
+}
+
+.AttachmentEditor .AttachedFile,
+.AttachmentEditor .AttachmentInsertAllBlock
+{
+	overflow: hidden; zoom: 1;
+	vertical-align: middle;
+	padding: 5px 10px;
+}
+
+.AttachmentEditor .AttachedFile#AttachedFileTemplate
+{
+	display: none;
+}
+
+	.AttachmentEditor .AttachedFile .Thumbnail
+	{
+		width: 54px;
+		height: 54px;
+		line-height: 50px;
+		display: block;
+		background: @content.background-color;
+		border: 1px solid @primaryLighterStill;
+		text-align: center;
+		vertical-align: middle;
+		float: left;
+	}
+	
+		.AttachmentEditor .AttachedFile .Thumbnail img
+		{
+			max-width: 50px;
+			max-height: 50px;
+			_width: 50px;
+			_height: 50px;
+			padding: 0;
+			margin: 0;
+			vertical-align: middle;
+		}
+		
+		.AttachmentEditor .AttachedFile .Thumbnail .genericAttachment
+		{			
+			@property "genericAttachmentThumb";
+			background-color: transparent;
+			display: block;
+			width: 36px;
+			height: 36px;
+			@property "/genericAttachmentThumb";
+			
+			margin: {xen:calc '(50 - @genericAttachmentThumb.width) / 2'}px;
+		}
+
+	.AttachmentEditor .AttachmentText
+	{
+		margin-left: 64px;
+	}
+	
+		.AttachmentEditor .AttachedFile .Filename
+		{
+		}
+		
+		.AttachmentEditor .secondaryContent .label
+		{
+			margin-bottom: 2px;
+			font-size: 11px;
+			color: @mutedTextColor;
+		}
+		
+		.AttachmentEditor .secondaryContent .controls
+		{
+			line-height: 25px;
+		}
+	
+		{xen:helper clearfix, '.AttachmentEditor .AttachedFile .controls'}
+		
+			
+		.AttachmentEditor .AttachedFile .ProgressMeter
+		{
+			display: block;
+			padding: 2px;
+			border: 1px solid @primaryLighter;
+			border-radius: 4px;
+			background-color: @content.background-color;
+			margin-right: 75px;
+			margin-top: 4px;
+			font-size: 14pt;
+			line-height: 26px;
+		}
+		
+			.AttachmentEditor .AttachedFile .ProgressMeter .ProgressGraphic
+			{
+				display: inline-block;
+				width: 0%;
+				height: 26px;
+				background: @primaryLight none repeat-x top;
+				text-align: right;
+			}
+			
+			.AttachmentEditor .AttachedFile .ProgressMeter .ProgressCounter
+			{
+				display: inline-block;
+				height: 26px;
+				padding: 0 10px;
+			}
+			
+			.AttachmentEditor .AttachedFile .ProgressMeter .ProgressGraphic .ProgressCounter
+			{
+				color: @primaryLightest;
+			}
+			
+			
+			.AttachmentEditor .AttachedFile .AttachmentDeleter,
+			.AttachmentEditor .AttachedFile .AttachmentCanceller
+			{
+				float: right;
+				display: none;
+			}
+
+.AttachmentEditor .AttachmentInsertAllBlock
+{
+	display: none;
+}
+
+	.AttachmentEditor .AttachmentInsertAllBlock span
+	{
+		float: left;
+		display: block;
+		width: 54px;
+		height: 34px;
+		background: @content.background-color url('@imagePath/xenforo/widgets/image-attachments.png') no-repeat center;
+		border: 1px solid @primaryLighterStill;
+		margin-right: 10px;
+	}
+
+.AttachmentEditor .AttachmentDeleteAll
+{
+	float: right;
+}
+
+/* SWFUploader placeholder */
+
+.swfupload
+{
+	position: absolute;
+	z-index: 1;
+}
+
+/* Uploader JS Overlay */
+
+.xenOverlay.attachmentUploader
+{
+	max-width: 500px;
+}
+
+.attachmentUploader #ctrl_upload
+{
+	margin: 2px auto 5px;
+}
+
+.attachmentUploader .attachmentConstraints dl
+{
+	margin-top: 2px;
+	font-size: 11px;
+}
