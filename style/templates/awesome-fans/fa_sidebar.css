@@ -1,0 +1,27 @@
+#boardStats .pairsJustified dl
+{
+	padding: 5px 0px;
+}
+.forum_list #boardStats .pairsJustified dt:before
+{
+	color: @faintTextColor;
+	font-family: FontAwesome;
+	font-weight: normal;
+	margin-right: 5px;
+}
+.forum_list .sidebar #boardStats .discussionCount dt:before
+{
+	content: "\f1e7";
+}
+.forum_list .sidebar #boardStats .messageCount dt:before
+{
+	content: "\f1e8";
+}
+.forum_list .sidebar #boardStats .memberCount dt:before
+{
+	content: "\f0c0";
+}
+.forum_list .sidebar #boardStats .pairsJustified dl:last-child dt:before
+{
+	content: "\f007";
+}
