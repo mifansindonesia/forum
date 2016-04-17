@@ -1,0 +1,19 @@
+.socialicons
+{
+	float: right;
+	margin-top: 10px;
+}
+.socialicons li
+{
+	display: inline-block;
+}
+.socialicons li a
+{
+	padding: 10px;
+	font-size: 24px;
+	color: @contentText;
+}
+.socialicons li a:hover
+{
+	color: @facolor2;
+}
