@@ -1,0 +1,108 @@
+/** Data tables **/
+.dataTableWrapper
+{
+	overflow-x: auto;
+	overflow-y: visible;
+}
+table.dataTable
+{
+	width: 100%;
+	_width: 99.5%;
+	margin: 10px 0;
+}
+
+.dataTable caption
+{
+	@property "heading";
+	font-weight: bold;
+	font-size: 11pt;
+	color: @primaryLightest;
+	background-color: @primaryLightish;
+	padding: 5px 10px;
+	margin-bottom: 3px;
+	border-bottom: 1px solid @primaryMedium;
+	border-top-left-radius: @fa_borderradiuss;
+	border-top-right-radius: @fa_borderradiuss;
+	@property "/heading";
+}
+
+.dataTable tr.dataRow td
+{
+	border-bottom: 1px solid @primaryLighterStill;
+	padding: 5px 10px;
+	word-wrap: break-word;
+}
+
+.dataTable tr.dataRow td.secondary
+{
+	background: @primaryLightest none repeat-x top;
+}
+
+.dataTable tr.dataRow th
+{
+	background: @secondaryLighter none repeat-x top;
+	border-bottom: 1px solid @secondaryLight;
+	border-top: 1px solid @secondaryLighter;
+	color: @secondaryDarker;
+	font-size: 11px;
+	padding: 5px 10px;
+}
+
+	.dataTable tr.dataRow th a
+	{
+		color: inherit;
+		text-decoration: underline;
+	}
+
+.dataTable .dataRow .dataOptions
+{
+	text-align: right;
+	white-space: nowrap;
+	word-wrap: normal;
+	padding: 0;
+}
+
+.dataTable .dataRow .important,
+.dataTable .dataRow.important
+{
+	font-weight: bold;
+}
+
+.dataTable .dataRow .dataOptions a.secondaryContent
+{
+	display: inline-block;
+	border-left: 1px solid @primaryLighterStill;
+	border-bottom: none;
+	padding: 7px 10px 6px;
+	font-size: 11px;
+}
+
+	.dataTable .dataRow .dataOptions a.secondaryContent:hover
+	{
+		background-color: @primaryLighterStill;
+		text-decoration: none;
+	}
+
+	.dataTable .dataRow .delete
+	{
+		padding: 0px;
+		width: 26px;
+		border-left: 1px solid @primaryLighterStill;
+		@property "secondaryContent.background";
+		background-color: rgb(255, 255, 255);
+		@property "/secondaryContent.background";
+	}	
+				
+		.dataTable .dataRow .delete a
+		{
+			display: block;
+			cursor: pointer;
+		
+			padding: 5px;
+			width: 16px;
+			height: 16px;
+			
+			overflow: hidden;
+			white-space: nowrap;
+			text-indent: -1000px;
+		}
