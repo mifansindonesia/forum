@@ -1,0 +1,397 @@
+<xen:include template="header.css" />
+
+<xen:include template="footer.css" />
+
+<xen:include template="breadcrumb.css" />
+
+<xen:include template="navigation.css" />
+
+<xen:include template="search_bar.css" />
+
+/** move the header to the top again **/
+
+#headerMover
+{
+	position: relative;
+	zoom: 1;
+}
+
+	#headerMover #headerProxy
+	{
+		@property "header.background";
+
+		@property "/header.background";
+		height: {xen:calc '@headerLogoHeight + @headerTabHeight * 2 + 2 - 10'}px;
+	}
+
+	#headerMover #header
+	{
+		width: 100%;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+
+
+/** Generic page containers **/
+
+.pageWidth
+{
+	@property "pageWidth";
+	padding-right: 0px;
+	padding-left: 0px;
+	margin: 0 auto;
+	max-width: 1180px;
+	box-sizing: border-box;
+	@property "/pageWidth";
+}
+
+.NoResponsive body
+{
+	<xen:if is="@nonResponsiveMinWidth">min-width: @nonResponsiveMinWidth;</xen:if>
+}
+
+#content .pageContent
+{
+	@property "content";
+	background-color: @contentBackground;
+	padding: 10px 20px;
+	@property "/content";
+}
+
+{xen:helper clearfix, '#content .pageContent'}
+
+<xen:include template="sidebar.css" />
+
+/** Text used in message bodies **/
+
+.messageText
+{
+	@property "messageText";
+	font-size: @fafontsizel;
+	font-family: @fa_primaryfont;
+	line-height: 1.7;
+	@property "/messageText";
+}
+
+	.messageText img,
+	.messageText iframe,
+	.messageText object,
+	.messageText embed
+	{
+		max-width: 100%;
+	}
+
+/** Link groups and pagenav container **/
+
+.pageNavLinkGroup
+{
+	display: table;
+	*zoom: 1;
+	table-layout: fixed;
+	box-sizing: border-box;
+	
+	@property "pageNavLinkGroup";
+	font-size: @fafontsizes;
+	margin: 10px 0;
+	line-height: 16px;
+	@property "/pageNavLinkGroup";
+}
+
+opera:-o-prefocus, .pageNavLinkGroup
+{
+	display: block;
+	overflow: hidden;
+}
+
+	.pageNavLinkGroup:after
+	{
+		content: ". .";
+		display: block;
+		word-spacing: 99in;
+		overflow: hidden;
+		height: 0;
+		font-size: 0.13em;
+		line-height: 0;
+	}
+
+	.pageNavLinkGroup .linkGroup
+	{
+		float: right;
+	}
+
+.linkGroup
+{
+}
+	
+	.linkGroup a
+	{
+		@property "linkGroupLink";
+		padding: 3px 0;
+		@property "/linkGroupLink";
+	}
+
+		.linkGroup a.inline
+		{
+			padding: 0;
+		}
+
+	.linkGroup a,
+	.linkGroup .Popup,
+	.linkGroup .element
+	{
+		margin-left: @linkGroupLinkSpacing;
+		display: block;
+		float: left;
+		<xen:if is="{$pageIsRtl}">*display: inline; *float: none; *zoom: 1;</xen:if>
+	}
+	
+		.linkGroup .Popup a
+		{
+			margin-left: -2px;
+			margin-right: -5px;
+			*margin-left: @linkGroupLinkSpacing;
+			padding: @linkGroupLink.padding-top 5px;
+		}
+
+	.linkGroup .element
+	{
+		padding: 3px 0;
+	}
+
+/** Call to action buttons **/
+
+a.callToAction
+{
+	@property "callToAction";
+	display: inline-block;
+	line-height: 34px;
+	outline: 0 none;
+	vertical-align: top;
+	height: 34px;
+	@property "/callToAction";
+	
+}
+
+	a.callToAction span
+	{
+		@property "callToActionSpan";
+		font-size: @fafontsizel;
+		font-family: @button.font-family;
+		color: @facolor8;
+		background-color: @facolor4;
+		padding: 0 15px;
+		border-radius: @fa_borderradiuss;
+		display: block;
+		/*text-shadow: 0px 0px 3px @primaryMedium;*/
+		@property "/callToActionSpan";
+	}
+	
+	a.callToAction:hover
+	{
+		text-decoration: none;
+	}
+
+		a.callToAction:hover span
+		{
+			@property "callToActionHover";
+			background-color: @primaryLight;
+			@property "/callToActionHover";
+		}
+		
+		a.callToAction:active
+		{
+			/*position: relative;
+			top: 2px;*/
+		}
+		
+		a.callToAction:active span
+		{
+			@property "callToActionActive";
+			background-color: @primaryMedium;
+			@property "/callToActionActive";
+		}
+
+/*********/
+
+.avatarHeap
+{
+	overflow: hidden; zoom: 1;
+}
+
+	.avatarHeap ol
+	{
+		margin-right: -4px;
+		margin-top: -4px;
+	}
+	
+		.avatarHeap li
+		{
+			float: left;
+			margin-right: 4px;
+			margin-top: 4px;
+		}
+		
+		.avatarHeap li .avatar
+		{
+			display: block;
+		}
+		
+/*********/
+
+.fbWidgetBlock .fb_iframe_widget,
+.fbWidgetBlock .fb_iframe_widget > span,
+.fbWidgetBlock .fb_iframe_widget iframe
+{
+	width: 100% !important;
+}
+
+/*********/
+
+.tagBlock
+{
+	margin: 10px 0;
+	font-size: 11px;
+}
+
+.tagList,
+.tagList li
+{
+	display: inline;
+}
+
+
+.tagList .tag
+{
+	position: relative;
+	display: inline-block;
+	background: @primaryLightest;
+	margin-left: 9px;
+	height: 14px;
+	line-height: 14px;
+	padding: 1px 4px 1px 6px;
+	border: 1px solid @primaryLighter;
+	border-left: none;
+	border-radius: 4px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	color: @primaryMedium;
+	font-size: 11px;
+	margin-bottom: 2px;
+}
+
+	.tagList .tag:hover
+	{
+		text-decoration: none;
+		background-color: @primaryLighterStill;
+	}
+
+	.tagList .tag .arrow
+	{
+		position: absolute;
+		display: block;
+		height: 2px;
+		width: 0;
+		left: -9px;
+		top: -1px;
+		border-style: solid;
+		border-width: 8px 9px 8px 0;
+		border-color: transparent;
+		border-right-color: @primaryLighter;
+	}
+
+		.tagList .tag .arrow:after
+		{
+			content: '';
+			position: absolute;
+			display: block;
+			height: 2px;
+			width: 0;
+			left: 1px;
+			top: -7px;
+			border-style: solid;
+			border-width: 7px 8px 7px 0;
+			border-color: transparent;
+			border-right-color: @primaryLightest;
+		}
+
+		.tagList .tag:hover .arrow:after
+		{
+			border-right-color: @primaryLighterStill;
+		}
+
+	.tagList .tag:after
+	{
+		content: '';
+		position: absolute;
+		left: -2px;
+		top: 6px;
+		display: block;
+		height: 3px;
+		width: 3px;
+		border-radius: 50%;
+		border: 1px solid @primaryLighter;
+		background: @contentBackground;
+	}
+
+<xen:include template="username_styles.css" />
+
+<xen:include template="thread_prefixes.css" />
+
+<xen:include template="user_banners.css" />
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveWideWidth)
+{
+	.Responsive .pageWidth
+	{
+		@property "pageWidthResponsiveWide";
+
+		@property "/pageWidthResponsiveWide";
+	}
+
+	.Responsive #content .pageContent
+	{
+		padding-left: {xen:calc '@content.padding-left / 2'}px;
+		padding-right: {xen:calc '@content.padding-right / 2'}px;
+	}
+}
+
+@media (max-width:@maxResponsiveMediumWidth)
+{
+	.Responsive .pageWidth
+	{
+		@property "pageWidthResponsiveMedium";
+		padding-right: 0;
+		padding-left: 0;
+		margin-right: 0;
+		margin-left: 0;
+		@property "/pageWidthResponsiveMedium";
+	}
+	
+	.Responsive .forum_view #pageDescription,
+	.Responsive .thread_view #pageDescription
+	{
+		display: none;
+	}
+}
+
+@media (max-width:@maxResponsiveNarrowWidth)
+{
+	.Responsive .pageWidth
+	{
+		@property "pageWidthResponsiveNarrow";
+
+		@property "/pageWidthResponsiveNarrow";
+	}
+	
+	.Responsive .pageNavLinkGroup .PageNav,
+	.Responsive .pageNavLinkGroup .linkGroup
+	{
+		clear: right;
+	}
+}
+</xen:if>
+
+<xen:include template="flatawesome.css" />
+<xen:include template="EXTRA.css" />
