@@ -1,0 +1,51 @@
+.thread_view .threadAlerts
+{
+	border: 1px solid @primaryLighterStill;
+	border-radius: 5px;
+	font-size: 11px;
+	margin: 10px 0;
+	padding: 5px;
+	line-height: 16px;
+}
+	
+	.thread_view .threadAlerts dt
+	{
+		color: @primaryLight;
+		display: inline;
+	}
+	
+	.thread_view .threadAlerts dd
+	{
+		color: @primaryDark;
+		font-weight: bold;
+		display: inline;
+	}
+	
+		.thread_view .threadAlerts .icon
+		{
+			float: right;
+			width: 16px;
+			height: 16px;
+			margin-left: 5px;
+			font-size: @fafontsizel;
+		}
+		
+	
+.thread_view .threadAlerts + * > .messageList
+{
+	border-top: none;
+}
+
+.thread_view .threadNotices
+{
+	background-color: @primaryLightest;
+	border: 1px solid @primaryLighter;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.thread_view .InlineMod
+{
+	overflow: hidden; zoom: 1;
+}
