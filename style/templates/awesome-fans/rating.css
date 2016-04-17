@@ -1,0 +1,54 @@
+.ratings
+{
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+}
+.rating .star
+{
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: text-bottom;
+	font-size: 1.42em;
+}
+
+.rating button.star
+{
+	border: none;
+	outline: none;
+	padding: 0;
+	background: none;
+
+	font-family: inherit;
+}
+
+.rating .star:before
+{
+	content: "\f006";
+	padding-right: 1px;
+	color: #999;
+}
+
+.rating button.star
+{
+	cursor: pointer;
+}
+
+.rating .star.Full:before
+{
+	content: "\f005";
+	color: @facolor2;
+}
+
+.rating .star.Half:before,
+.rating .star.Full.Half:before
+{
+	content: "\f123";
+	color: @facolor2;
+}
+
+.rating .RatingValue
+{
+	display: none;
+}
