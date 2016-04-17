@@ -1,0 +1,181 @@
+.resourceInfo
+{
+	overflow: hidden; zoom: 1;
+	margin-bottom: 10px;
+}
+
+	.resourceInfo .resourceImage
+	{
+		float: left;
+		margin-right: 12px;
+		margin-bottom: 3px;
+		width: 48px;
+		position: relative;
+	}
+	
+		.resourceInfo .resourceImage .resourceIcon
+		{
+			@property "avatar";
+			background-color: @contentBackground;
+			padding: 2px;
+			border: 1px solid @primaryLighter;
+			border-radius: @fa_borderradiuss;
+			@property "/avatar";
+			width: 48px;
+			height: 48px;
+		}
+
+	.resourceInfo h1
+	{
+		@property "h1";
+		font-size: 18pt;
+		color: rgb(156, 156, 156);
+		overflow: hidden;
+		zoom: 1;
+		@property "/h1";
+	}
+
+	.resourceInfo .primaryLinks
+	{
+		float: right;
+		margin-left: 10px;
+		min-width: 180px;
+	}
+	
+		.resourceInfo .primaryLinks.noButton
+		{
+			min-width: 0;
+			margin-top: 5px;
+		}
+
+		.resourceInfo .primaryLinks li
+		{
+			text-align: center;
+			margin-bottom: 5px;
+		}
+
+		.resourceInfo .primaryLinks li:last-child
+		{
+			margin-bottom: 0;
+		}
+
+	.resourceInfo small.minorText
+	{
+		display: block;
+		font-size: 11px;
+		font-weight: normal;
+	}
+
+.downloadButton
+{
+	@property "signupButton";
+	margin: 10px 30px;
+	border-radius: @fa_borderradiusl;
+	text-align: center;
+	line-height: 40px;
+	display: block;
+	cursor: pointer;
+	height: 40px;
+	@property "/signupButton";
+
+	margin: 0;
+	line-height: normal;
+	height: auto;
+}
+
+.downloadDisabled
+{
+	border-color: @mutedTextColor;
+}
+
+	.downloadButton .inner
+	{
+		@property "signupButtonInner";
+		font-size: 12pt;
+		font-family: @button.font-family;
+		color: @facolor8;
+		background-color: @facolor4;
+		border-radius: @fa_borderradiuss;
+		display: block;
+		@property "/signupButtonInner";
+
+		padding: 3px 10px;
+	}
+	
+	.downloadButton.purchase .inner
+	{
+		padding: 6px 10px;
+	}
+
+	.downloadButton:hover .inner
+	{
+		@property "signupButtonHover";
+		color: @facolor6;
+		text-decoration: none;
+		background-color: @facolor2;
+		@property "/signupButtonHover";
+	}
+
+	.downloadButton:active
+	{
+		@property "signupButtonActive";
+		box-shadow: 0 0 3px rgba(0,0,0, 0.2);
+		/*position: relative;
+		top: 2px;*/
+		@property "/signupButtonActive";
+	}
+
+	.downloadDisabled .inner,
+	.downloadDisabled:hover .inner
+	{
+		background-color: @mutedTextColor;
+		color: white;
+	}
+
+.resourceAlerts
+{
+	border: 1px solid @primaryLighterStill;
+	border-radius: 5px;
+	font-size: 11px;
+	margin: 10px 0;
+	padding: 5px;
+	line-height: 16px;
+}
+
+	.resourceAlerts .icon
+	{
+		float: right;
+		width: 16px;
+		height: 16px;
+		margin-left: 5px;
+	}
+		
+			
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveNarrowWidth)
+{
+	.Responsive .resourceInfo
+	{
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+	.Responsive .resourceInfo .primaryLinks
+	{
+		display: table-footer-group;
+		
+		float: none;
+		padding-right: 0;
+		border-right: none;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	
+		.Responsive .resourceInfo .downloadButton
+		{
+			display: inline-block;
+		}
+}
+</xen:if>
