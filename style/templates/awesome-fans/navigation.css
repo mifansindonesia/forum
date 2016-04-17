@@ -1,0 +1,543 @@
+#navigation .pageContent
+{
+	height: {xen:calc '@headerTabHeight * 2 + 2 - 10'}px;
+	position: relative;
+}
+
+#navigation .menuIcon
+{
+	position: relative;
+	font-size:18px;
+	width: 16px;
+	display: inline-block;
+	text-indent: -9999px;
+}
+
+#navigation .PopupOpen .menuIcon:before,
+#navigation .navLink .menuIcon:before
+{
+	zoom: 1;
+}
+
+#navigation .menuIcon:before
+{
+	content: "";
+	font-size: 18px;
+	position: absolute;
+	top: {xen:calc 'round(-0.31 + 0.029 * @headerTabHeight, 1)'}em;
+	left: 0;
+	width: 16px;
+	height: 2px;
+	border-top: 6px double currentColor;
+	border-bottom: 2px solid currentColor;
+}
+
+	.navTabs
+	{
+		@property "navTabs";
+		font-size: @fafontsizel;
+		color: @facolor5;
+		background-color: @facolor1;
+		padding: 0 15px;
+		border: 1px solid @facolor1;
+		border-top-left-radius: @fa_borderradiuss;
+		border-top-right-radius: @fa_borderradiuss;
+		@property "/navTabs";
+		
+		height: @headerTabHeight;
+	}
+	
+		.navTabs .publicTabs
+		{
+			float: left;
+		}
+		
+		.navTabs .visitorTabs
+		{
+			float: right;
+		}
+	
+			.navTabs .navTab
+			{
+				float: left;
+				white-space: nowrap;
+				word-wrap: normal;
+				
+				<xen:if is="{$pageIsRtl}">*display: inline; *float: none; *zoom: 1;</xen:if>
+			}
+
+
+/* ---------------------------------------- */
+/* Links Inside Tabs */
+
+.navTabs .navLink,
+.navTabs .SplitCtrl
+{
+	@property "navLink";
+	font-family: @fa_secondaryfont;
+	display: block;
+	float: left;
+	vertical-align: text-bottom;
+	text-align: center;
+	outline: 0 none;
+	@property "/navLink";
+	
+	<xen:if is="{$pageIsRtl}">*float: none; *display: inline; *zoom: 1;</xen:if>
+	
+	height: @headerTabHeight;
+	line-height: @headerTabHeight;
+}
+
+	.navTabs .publicTabs .navLink
+	{
+		padding: 0 20px;
+	}
+	
+	.navTabs .visitorTabs .navLink
+	{
+		padding: 0 10px;
+	}
+	
+	.navTabs .navLink:hover
+	{
+		text-decoration: none;
+	}
+	
+	/* ---------------------------------------- */
+	/* unselected tab, popup closed */
+
+	.navTabs .navTab.PopupClosed
+	{
+		position: relative;
+	}
+	
+	.navTabs .navTab.PopupClosed .navLink
+	{
+		color: @primaryLighter;
+	}
+	
+		.navTabs .navTab.PopupClosed:hover
+		{
+			background-color: @primaryMedium;
+		}
+		
+			.navTabs .navTab.PopupClosed .navLink:hover
+			{
+				color: @textCtrlBackground;
+			}
+		
+	.navTabs .navTab.PopupClosed .arrowWidget
+	{
+		/* circle-arrow-down-light */
+		background-position: -64px 0;
+	}
+	
+	.navTabs .navTab .SplitCtrl
+	{
+		margin-left: -14px;
+		width: 20px;
+	}
+
+	
+	/* ---------------------------------------- */
+	/* selected tab */
+
+	.navTabs .navTab.selected .navLink
+	{
+		position: relative;
+		@property "navTabSelected";
+		color: @facolor7;
+		background-color: @facolor3;
+		@property "/navTabSelected";
+	}
+	
+	.navTabs .navTab.selected .SplitCtrl
+	{
+		display: none;
+	}
+	
+	.navTabs .navTab.selected .arrowWidget
+	{
+		/* circle-arrow-down */
+		background-position: -32px 0;
+	}
+	
+		.navTabs .navTab.selected.PopupOpen .arrowWidget
+		{
+			/* circle-arrow-up */
+			background-position: -16px 0;
+		}
+	
+	/* ---------------------------------------- */
+	/* unselected tab, popup open */
+	
+	.navTabs .navTab.PopupOpen .navLink
+	{
+	}
+	
+	
+	/* ---------------------------------------- */
+	/* selected tab, popup open (account) */
+	
+	.navTabs .navTab.selected.PopupOpen .navLink
+	{
+		@property "popupControl";
+		color: @faintTextColor;
+		background-color: @primaryDark;
+		border-top-left-radius: @fa_borderradiuss;
+		border-top-right-radius: @fa_borderradiuss;
+		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 0px;
+		@property "/popupControl";
+	}
+	
+/* ---------------------------------------- */
+/* Second Row */
+
+.navTabs .navTab.selected .tabLinks
+{
+	@property "navTabSelected.background";
+	background-color: @facolor3;
+	@property "/navTabSelected.background";
+	
+	width: 100%;	
+	padding: 0;
+	border: none;
+	overflow: hidden; zoom: 1;	
+	position: absolute;
+	left: 0px;	
+	top: {xen:calc '@headerTabHeight + 2'}px;
+	height: @headerTabHeight;
+	background-position: 0px -@headerTabHeight;
+	*clear:expression(style.width = document.getElementById('navigation').offsetWidth + 'px', style.clear = "none", 0);
+}
+
+	.navTabs .navTab.selected .blockLinksList
+	{
+		background: none;
+		padding: 0;
+		border: none;
+		margin-left: 8px;
+	}
+
+	.withSearch .navTabs .navTab.selected .blockLinksList
+	{
+		margin-right: 275px;
+	}
+
+	.navTabs .navTab.selected .tabLinks .menuHeader
+	{
+		display: none;
+	}
+	
+	.navTabs .navTab.selected .tabLinks li
+	{
+		float: left;
+		padding: 2px 0;
+	}
+	
+		.navTabs .navTab.selected .tabLinks a
+		{
+			@property "navTabLink";
+			font-size: @fafontsizes;
+			color: @facolor7;
+			padding: 1px 10px;
+			display: block;
+			line-height: 36px !important;
+			@property "/navTabLink";
+			
+			line-height: {xen:calc '@headerTabHeight - 6'}px;
+		}
+		
+		.navTabs .navTab.selected .tabLinks .PopupOpen a
+		{
+			color: inherit;
+			text-shadow: none;
+		}
+		
+			.navTabs .navTab.selected .tabLinks a:hover,
+			.navTabs .navTab.selected .tabLinks a:focus
+			{
+				@property "navTabLinkHover";
+				color: @facolor2;
+				text-decoration: none;
+				background: rgba(0, 0, 0, 0);
+				border-width: 0;
+				outline: 0;
+				@property "/navTabLinkHover";
+			}
+			
+			.navTabs .navTab.selected .tabLinks .Popup a:hover,
+			.navTabs .navTab.selected .tabLinks .Popup a:focus
+			{
+				color: inherit;
+				background: none;
+				border-color: transparent;
+				border-radius: 0;
+				text-shadow: none;
+			}
+	
+/* ---------------------------------------- */
+/* Alert Balloons */
+	
+.navTabs .navLink .itemCount
+{
+	@property "alertBalloon";
+	font-weight: bold;
+	font-size: 9px;
+	color: white;
+	background-color: #e03030;
+	padding: 0 2px;
+	position: absolute;
+	right: 5px;
+	top: 1px;
+	line-height: 14px;
+	min-width: 12px;
+	_width: 12px;
+	text-align: center;
+	text-shadow: none;
+	white-space: nowrap;
+	word-wrap: normal;
+	box-shadow: 2px 2px 5px rgba(0,0,0, 0.25);
+	height: 14px;
+	@property "/alertBalloon";
+}
+
+	.navTabs .navLink .itemCount .arrow
+	{
+		@property "alertBalloonArrow";
+		border: 3px solid transparent;
+		border-top-color: #e03030;
+		border-bottom: 1px none black;
+		position: absolute;
+		bottom: -3px;
+		right: 4px;
+		line-height: 0px;
+		text-shadow: none;
+		_display: none;
+/* Hide from IE6 */
+width: 0px;
+		height: 0px;
+		@property "/alertBalloonArrow";
+	}
+	
+.navTabs .navLink .itemCount.Zero
+{
+	display: none;
+}
+
+.navTabs .navLink .itemCount.ResponsiveOnly
+{
+	display: none !important;
+}
+
+.NoResponsive #VisitorExtraMenu_Counter,
+.NoResponsive #VisitorExtraMenu_ConversationsCounter,
+.NoResponsive #VisitorExtraMenu_AlertsCounter
+{
+	display: none !important;
+}
+	
+/* ---------------------------------------- */
+/* Account Popup Menu */
+
+	.navTabs .navTab.account .navLink .accountUsername
+	{
+		display: block;
+		max-width: 100px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+#AccountMenu
+{
+	width: 274px;
+}
+
+#AccountMenu .menuHeader
+{
+	position: relative;
+}
+
+	#AccountMenu .menuHeader .avatar
+	{
+		float: left;
+		margin-right: 10px;
+	}
+
+	#AccountMenu .menuHeader .visibilityForm
+	{
+		margin-top: 10px;
+		color: @primaryMedium;
+	}
+	
+	#AccountMenu .menuHeader .links .fl
+	{
+		position: absolute;
+		bottom: 10px;
+		left: {xen:calc '10 + 10 + 96'}px;
+	}
+
+	#AccountMenu .menuHeader .links .fr
+	{
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+	}
+	
+#AccountMenu .menuColumns
+{
+	overflow: hidden; zoom: 1;
+	padding: 2px;
+}
+
+	#AccountMenu .menuColumns ul
+	{
+		float: left;
+		padding: 0;
+		max-height: none;
+		overflow: hidden;
+	}
+
+		#AccountMenu .menuColumns a,
+		#AccountMenu .menuColumns label
+		{
+			width: 115px;
+		}
+
+#AccountMenu .statusPoster textarea
+{
+	width: 245px;
+	margin: 0;
+	resize: vertical;
+	overflow: hidden;
+}
+
+#AccountMenu .statusPoster .submitUnit
+{
+	margin-top: 5px;
+	text-align: right;
+}
+
+	#AccountMenu .statusPoster .submitUnit .statusEditorCounter
+	{
+		float: left;
+		line-height: 23px;
+		height: 23px;
+	}
+	
+/* ---------------------------------------- */
+/* Inbox, Alerts Popups */
+
+.navPopup
+{
+	width: 260px;
+}
+
+.navPopup a:hover,
+.navPopup .listItemText a:hover
+{
+	background: none;
+	text-decoration: underline;
+}
+
+	.navPopup .menuHeader .InProgress
+	{
+		float: right;
+		display: block;
+		width: 20px;
+		height: 20px;
+	}
+
+.navPopup .listPlaceholder
+{
+	max-height: 350px;
+	overflow: auto;
+}
+
+	.navPopup .listPlaceholder ol.secondaryContent
+	{
+		padding: 0 10px;
+	}
+
+		.navPopup .listPlaceholder ol.secondaryContent.Unread
+		{
+			background-color: @inlineModChecked.background-color;
+		}
+
+.navPopup .listItem
+{
+	overflow: hidden; zoom: 1;
+	padding: 5px 0;
+	border-bottom: 1px solid @primaryLighterStill;
+}
+
+.navPopup .listItem:last-child
+{
+	border-bottom: none;
+}
+
+.navPopup .PopupItemLinkActive:hover
+{
+	margin: 0 -8px;
+	padding: 5px 8px;
+	border-radius: 5px;
+	background-color: @primaryLighterStill;
+	cursor: pointer;
+}
+
+.navPopup .avatar
+{
+	float: left;
+}
+
+	.navPopup .avatar img
+	{
+		width: 32px;
+		height: 32px;
+	}
+
+.navPopup .listItemText
+{
+	margin-left: 37px;
+}
+
+	.navPopup .listItemText .muted
+	{
+		font-size: 9px;
+	}
+
+	.navPopup .unread .listItemText .title,
+	.navPopup .listItemText .subject
+	{
+		font-weight: bold;
+	}
+
+.navPopup .sectionFooter .floatLink
+{
+	float: right;
+}
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveMediumWidth)
+{
+	.Responsive .navTabs
+	{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.Responsive .withSearch .navTabs .navTab.selected .blockLinksList
+	{
+		margin-right: 50px;
+	}
+}
+
+@media (max-width:@maxResponsiveNarrowWidth)
+{
+	.Responsive.hasJs .navTabs:not(.showAll) .publicTabs .navTab:not(.selected):not(.navigationHiddenTabs)
+	{
+		display: none;
+	}
+}
+</xen:if>
