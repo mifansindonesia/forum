@@ -1,0 +1,84 @@
+.resourceUpdate
+{
+	border-bottom: none;
+	border-top: 1px solid @primaryLighterStill;
+	padding: 40px 0 0;
+	overflow: hidden; zoom: 1;
+}
+
+	.resourceUpdate:first-child
+	{
+		border-top: none;
+		padding-top: 0;
+	}
+
+	.resourceUpdate .hidden
+	{
+		display: none;
+	}
+
+	.resourceUpdate .avatar
+	{
+		display: none;
+	}
+
+	.resourceUpdate .versionInfo
+	{
+		float: right;
+		width: 230px;
+		margin-top: 0;
+		margin-left: 10px;
+		font-size: 11px;
+	}
+
+		.resourceUpdate .versionInfo .secondaryContent
+		{
+			padding: 10px;
+		}
+		
+	.resourceUpdate .likesSummary
+	{
+		@property "messageLikesSummary";
+		padding: 5px;
+		margin-top: 10px;
+		border: 1px solid @primaryLighterStill;
+		border-radius: @fa_borderradiuss;
+		@property "/messageLikesSummary";
+	}
+
+.imageCollection
+{
+	margin: 10px auto;
+	border: 1px solid @primaryLighterStill;
+	border-radius: 5px;
+	background: @primaryLightest none repeat-x top;
+	padding: 5px;
+	overflow: hidden; zoom: 1;
+}
+	.imageCollection .textHeading
+	{
+		margin-top: 0;
+		color: @primaryLight;
+	}
+
+	.imageCollection li
+	{
+		float: left;
+		width: {$xenOptions.attachmentThumbnailDimensions}px;
+		height: {$xenOptions.attachmentThumbnailDimensions}px;
+		overflow: hidden;
+		background-color: @contentBackground;
+		border: 1px solid @primaryLighterStill;
+		border-radius: 5px;
+		text-align: center;
+		line-height: {$xenOptions.attachmentThumbnailDimensions}px;
+		font-size: 1px;
+		margin: 3px;
+		padding: 5px;
+		white-space: nowrap;
+	}
+
+		.imageCollection li img
+		{
+			vertical-align: middle;
+		}
