@@ -1,0 +1,359 @@
+/* sidebar structural elements */
+
+.mainContainer
+{
+	 float: left;
+	 margin-right: -{xen:calc '@sidebar.width + 10'}px;
+	 width: 100%;
+}
+
+	.mainContent
+	{
+		margin-right: {xen:calc '@sidebar.width + 10'}px;
+	}
+
+.sidebar
+{
+	float: right;
+	@property "sidebar";
+	font-size: @fafontsizes;
+	width: 250px;
+	@property "/sidebar";
+}
+
+
+
+
+
+
+
+/* visitor panel */
+
+.sidebar .visitorPanel
+{
+	overflow: hidden; zoom: 1;
+}
+
+	.sidebar .visitorPanel h2 .muted
+	{
+		display: none;
+	}
+
+	.sidebar .visitorPanel .avatar
+	{
+		@property "visitorPanelAvatar";
+		margin-right: 5px;
+		float: left;
+		@property "/visitorPanelAvatar";
+		
+		width: auto;
+		height: auto;
+	}
+	
+		.sidebar .visitorPanel .avatar img
+		{
+			width: @visitorPanelAvatar.width;
+			height: @visitorPanelAvatar.height;
+		}
+	
+	.sidebar .visitorPanel .username
+	{
+		@property "visitorPanelUsername";
+		font-weight: bold;
+		font-size: 11pt;
+		@property "/visitorPanelUsername";
+	}
+	
+	.sidebar .visitorPanel .stats
+	{
+		@property "visitorPanelStats";
+		margin-top: 2px;
+		@property "/visitorPanelStats";
+	}
+	
+	.sidebar .visitorPanel .stats .pairsJustified
+	{
+		line-height: normal;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+/* generic sidebar blocks */
+		
+.sidebar .section .primaryContent   h3,
+.sidebar .section .secondaryContent h3,
+.profilePage .mast .section.infoBlock h3
+{
+	@property "sidebarBlockHeading";
+	font-size: @fafontsizel;
+	font-family: @fa_secondaryfont;
+	color: @facolor5;
+	background-color: @facolor2;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin: -10px -10px 7px;
+	border-radius: @fa_borderradiuss;
+	@property "/sidebarBlockHeading";
+}
+
+.sidebar .section .primaryContent   h3 a,
+.sidebar .section .secondaryContent h3 a
+{
+	@property "sidebarBlockHeading.font";
+	font-size: @fafontsizel;
+	font-family: @fa_secondaryfont;
+	color: @facolor5;
+	@property "/sidebarBlockHeading.font";
+}
+
+.sidebar .section .secondaryContent .footnote,
+.sidebar .section .secondaryContent .minorHeading
+{
+	@property "sidebarBlockFootnote";
+	color: @primaryLight;
+	margin-top: 5px;
+	@property "/sidebarBlockFootnote";
+}
+
+	.sidebar .section .secondaryContent .minorHeading a
+	{
+		color: @sidebarBlockFootnote.color;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+/* list of users with 32px avatars, username and user title */
+
+.sidebar .avatarList li
+{
+	@property "sidebarAvatarListItem";
+	margin: 5px 0;
+	overflow: hidden;
+	zoom: 1;
+	@property "/sidebarAvatarListItem";
+}
+
+	.sidebar .avatarList .avatar
+	{
+		@property "sidebarAvatarListAvatar";
+		margin-right: 5px;
+		float: left;
+		width: 32px;
+		height: 32px;
+		@property "/sidebarAvatarListAvatar";
+		
+		width: auto;
+		height: auto;
+	}
+		
+	.sidebar .avatarList .avatar img
+	{
+		width: @sidebarAvatarListAvatar.width;
+		height: @sidebarAvatarListAvatar.height;
+	}
+	
+	.sidebar .avatarList .username
+	{
+		@property "sidebarAvatarListUsername";
+		font-size: 11pt;
+		margin-top: 2px;
+		display: block;
+		@property "/sidebarAvatarListUsername";
+	}
+	
+	.sidebar .avatarList .userTitle
+	{
+		@property "sidebarAvatarListUserTitle";
+		color: @mutedTextColor;
+		@property "/sidebarAvatarListUserTitle";
+	}
+
+
+
+
+
+
+
+
+
+/* list of users */
+
+.sidebar .userList
+{
+}
+
+	.sidebar .userList .username
+	{
+		@property "sidebarUserListUsername";
+		font-size: @fafontsizes;
+		@property "/sidebarUserListUsername";
+	}
+
+	.sidebar .userList .username.invisible
+	{
+		@property "sidebarUserListUsernameInvisible";
+		color: @primaryLightish;
+		@property "/sidebarUserListUsernameInvisible";
+	}
+	
+	.sidebar .userList .username.followed
+	{
+		@property "sidebarUserListUsernameFollowed";
+
+		@property "/sidebarUserListUsernameFollowed";
+	}
+
+	.sidebar .userList .moreLink
+	{
+		display: block;
+	}
+	
+	
+	
+	
+/* people you follow online now */
+
+.followedOnline
+{
+	@property "sidebarFollowedUsers";
+	margin-top: 3px;
+	margin-bottom: -5px;
+	overflow: hidden;
+	zoom: 1;
+	@property "/sidebarFollowedUsers";
+}
+
+.followedOnline li
+{
+	@property "sidebarFollowedUsersItem";
+	margin-right: 5px;
+	margin-bottom: 5px;
+	float: left;
+	@property "/sidebarFollowedUsersItem";
+}
+
+	.followedOnline .avatar
+	{
+		@property "sidebarFollowedUsersAvatar";
+		width: 32px;
+		height: 32px;
+		@property "/sidebarFollowedUsersAvatar";
+		
+		width: auto;
+		height: auto;
+	}
+	
+		.followedOnline .avatar img
+		{
+			width: @sidebarFollowedUsersAvatar.width;
+			height: @sidebarFollowedUsersAvatar.height;
+		}
+	
+	
+	
+
+	
+	
+/* call to action */
+
+#SignupButton
+{
+	@property "signupButton";
+	margin: 10px 30px;
+	border-radius: @fa_borderradiusl;
+	text-align: center;
+	line-height: 40px;
+	display: block;
+	cursor: pointer;
+	height: 40px;
+	@property "/signupButton";
+}
+
+	#SignupButton .inner
+	{
+		@property "signupButtonInner";
+		font-size: 12pt;
+		font-family: @button.font-family;
+		color: @facolor8;
+		background-color: @facolor4;
+		border-radius: @fa_borderradiuss;
+		display: block;
+		@property "/signupButtonInner";
+	}
+	
+	#SignupButton:hover .inner
+	{
+		@property "signupButtonHover";
+		color: @facolor6;
+		text-decoration: none;
+		background-color: @facolor2;
+		@property "/signupButtonHover";
+	}
+	
+	#SignupButton:active
+	{
+		@property "signupButtonActive";
+		box-shadow: 0 0 3px rgba(0,0,0, 0.2);
+		/*position: relative;
+		top: 2px;*/
+		@property "/signupButtonActive";
+	}
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveWideWidth)
+{
+	.Responsive .mainContainer
+	{
+		 float: none;
+		 margin-right: 0;
+		 width: auto;
+	}
+
+		.Responsive .mainContent
+		{
+			margin-right: 0;
+		}
+	
+	.Responsive .sidebar
+	{
+		float: none;
+		margin: 0 auto;
+	}
+
+		.Responsive .sidebar .visitorPanel
+		{
+			display: none;
+		}
+}
+
+@media (max-width:340px)
+{
+	.Responsive .sidebar
+	{
+		width: 100%;
+	}
+}
+</xen:if>
+
+<xen:include template="fa_sidebar.css" />
