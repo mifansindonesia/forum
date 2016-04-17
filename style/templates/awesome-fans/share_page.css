@@ -1,0 +1,59 @@
+.sharePage
+{
+}
+
+{xen:helper clearfix, '.sharePage'}
+
+	.sharePage .shareControl
+	{
+		float: left;
+	}
+	
+	.sharePage .tweet
+	{
+		margin-right: 30px;
+	}
+
+	.sharePage .facebookLike .label
+	{
+		font-size: 11px;
+		line-height: 24px;
+		float: left;
+		margin-right: 7px;
+		display: none;
+	}
+	
+	.sharePage iframe
+	{
+		height: 20px;
+	}
+	
+	.sharePage .facebookLike iframe
+	{
+		z-index: 52;
+	}
+	
+<xen:if is="{$pageIsRtl}">
+	/* G+1 bugs in RTL - they absolutely position on the left which makes a scrollbar */
+	iframe[id^="oauth2relay"]
+	{
+		rtl-raw.left: auto !important;
+		rtl-raw.right: -100px !important;
+	}
+	
+	#___plusone_0, #___plusone_1, #___plusone_2
+	{
+		rtl-raw.left: auto !important;
+		rtl-raw.right: -10000px !important;
+	}
+</xen:if>
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveNarrowWidth)
+{.a2a_button_print, .a2a_button_pinterest, .a2a_button_email, .a2a_button_tumblr, .a2a_button_linkedin {display:none};
+	.Responsive .sharePage
+	{
+		/* display: none; */
+	}
+}
+</xen:if>
