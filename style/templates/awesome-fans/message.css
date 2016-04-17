@@ -1,0 +1,336 @@
+<xen:edithint template="message_user_info.css" />
+
+.messageList
+{
+	@property "messageList";
+
+	@property "/messageList";
+}
+
+.messageList .message
+{
+	@property "message";
+	background-color: @primaryLightest;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid @primaryLighter;
+	@property "/message";
+}
+
+{xen:helper clearfix, '.messageList .message'}
+
+/*** Message block ***/
+
+.message .messageInfo
+{
+	@property "messageInfo";
+	background: rgba(0, 0, 0, 0);
+	padding: 0;
+	margin-left: 170px;
+	border-bottom: 1px none black;
+	@property "/messageInfo";
+	zoom: 1;
+}
+
+	.message .newIndicator
+	{
+		@property "messageNewIndicator";
+		font-size: @fafontsizes;
+		color: @facolor6;
+		background-color: @facolor2;
+		padding: 1px 5px;
+		margin: -5px -5px 5px 5px;
+		border: 1px solid @facolor2;
+		border-radius: 3px;
+		border-top-right-radius: 0px;
+		display: block;
+		float: right;
+		position: relative;
+		box-shadow: 1px 1px 3px rgba(0,0,0, 0.25);
+		@property "/messageNewIndicator";
+		
+		margin-right: -{xen:calc '@content.padding-right + 5'}px;
+	}
+	
+		.message .newIndicator span
+		{
+			@property "messageNewIndicatorInner";
+			background-color: @facolor2;
+			border-top-right-radius: 3px;
+			position: absolute;
+			top: -4px;
+			right: -1px;
+			width: 5px;
+			height: 4px;
+			@property "/messageNewIndicatorInner";
+		}
+
+	.message .messageContent
+	{
+		@property "messageContent";
+		padding-bottom: 2px;
+		min-height: 100px;
+		overflow: hidden;
+		*zoom: 1;
+		@property "/messageContent";
+	}
+	
+	.message .messageTextEndMarker
+	{
+		height: 0;
+		font-size: 0;
+		overflow; hidden;
+	}
+	
+	.message .editDate
+	{
+		text-align: right;
+		margin-top: 5px;
+		font-size: 11px;
+		color: @mutedTextColor;
+	}
+
+	.message .signature
+	{
+		@property "messageSignature";
+		font-size: @fafontsizes;
+		color: @mutedTextColor;
+		padding: 5px 0 0;
+		margin-top: 5px;
+		border-top: 1px dashed @primaryLighter;
+		@property "/messageSignature";
+	}
+
+	.message .messageMeta
+	{
+		@property "messageMeta";
+		font-size: @fafontsizes;
+		padding: 15px 5px 5px;
+		margin: -5px;
+		overflow: hidden;
+		zoom: 1;
+		@property "/messageMeta";
+	}
+
+		.message .privateControls
+		{
+			@property "messagePrivateControls";
+			float: left;
+			@property "/messagePrivateControls";
+		}
+
+		.message .publicControls
+		{
+			@property "messagePublicControls";
+			float: right;
+			@property "/messagePublicControls";
+		}
+		
+			.message .privateControls .item
+			{
+				margin-right: 10px;
+				float: left;
+			}
+
+				.message .privateControls .item:last-child
+				{
+					margin-right: 0;
+				}
+
+			.message .publicControls .item
+			{
+				margin-left: 10px;
+				float: left;
+			}
+	
+				.message .messageMeta .control
+				{
+					@property "messageMetaControl";
+
+					@property "/messageMetaControl";
+				}
+				
+					.message .messageMeta .control:focus
+					{
+						@property "messageMetaControlFocus";
+
+						@property "/messageMetaControlFocus";
+					}
+				
+					.message .messageMeta .control:hover
+					{
+						@property "messageMetaControlHover";
+
+						@property "/messageMetaControlHover";
+					}
+				
+					.message .messageMeta .control:active
+					{
+						@property "messageMetaControlActive";
+
+						@property "/messageMetaControlActive";
+					}
+	/*** multiquote +/- ***/
+			
+	.message .publicControls .MultiQuoteControl
+	{
+		padding-left: 4px;
+		padding-right: 4px;
+		border-radius: 2px;
+		margin-left: 6px;
+		margin-right: -4px;
+	}
+	
+	
+	.message .publicControls .MultiQuoteControl.active
+	{
+		background-color: @primaryLighterStill;
+	}
+	
+	<xen:include template="message_notices.css" />
+	
+	.message .likesSummary
+	{
+		@property "messageLikesSummary";
+		padding: 5px;
+		margin-top: 10px;
+		border: 1px solid @primaryLighterStill;
+		border-radius: @fa_borderradiuss;
+		@property "/messageLikesSummary";
+	}
+	
+	.message .messageText > *:first-child
+	{
+		margin-top: 0;
+	}
+
+/* inline moderation changes */
+
+.InlineModChecked .messageUserBlock,
+.InlineModChecked .messageInfo,
+.InlineModChecked .messageNotices,
+.InlineModChecked .bbCodeBlock .type,
+.InlineModChecked .bbCodeBlock blockquote,
+.InlineModChecked .attachedFiles .attachedFilesHeader,
+.InlineModChecked .attachedFiles .attachmentList
+{
+	@property "inlineModChecked";
+	background-color: @inlineMod;
+	@property "/inlineModChecked";
+}
+
+.InlineModChecked .messageUserBlock div.avatarHolder,
+.InlineModChecked .messageUserBlock .extraUserInfo
+{
+	background: transparent;
+}
+
+.InlineModChecked .messageUserBlock .arrow span
+{
+	border-left-color: @inlineMod;
+}
+
+/* message list */
+
+.messageList .newMessagesNotice
+{
+	margin: 10px auto;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: 1px solid @primaryLighter;
+	background-color: @primaryLighterStill;
+	font-size: 11px;
+}
+
+/* deleted / ignored message placeholder */
+
+.messageList .message.placeholder
+{
+}
+
+.messageList .placeholder .placeholderContent
+{	
+	overflow: hidden; zoom: 1;
+	color: @primaryLightish;
+	font-size: 11px;
+}
+
+	.messageList .placeholder a.avatar
+	{
+		float: left;
+		display: block;
+	}
+	
+		.messageList .placeholder a.avatar img
+		{
+			display: block;
+			width: 32px;
+			height: 32px;
+		}
+		
+	.messageList .placeholder .privateControls
+	{
+		margin-top: -5px;
+	}
+	
+
+/* messages remaining link */
+
+.postsRemaining a,
+a.postsRemaining
+{
+	font-size: 11px;
+	color: @mutedTextColor;
+}
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveWideWidth)
+{
+	.Responsive .message .newIndicator
+	{
+		margin-right: 0;
+		border-top-right-radius: @messageNewIndicator.border-top-left-radius;
+	}
+	
+		.Responsive .message .newIndicator span
+		{
+			display: none;
+		}
+}
+
+@media (max-width:@maxResponsiveNarrowWidth)
+{
+	.Responsive .message .messageInfo
+	{
+		margin-left: 0;
+		padding: 0 10px;
+	}
+
+	.Responsive .message .messageContent
+	{
+		min-height: 0;
+	}	
+
+	.Responsive .message .newIndicator
+	{
+		margin-right: -5px;
+		margin-top: -16px;
+	}
+
+	.Responsive .message .postNumber,
+	.Responsive .message .authorEnd
+	{
+		display: none;
+	}
+	
+	.Responsive .message .signature
+	{
+		display: none;
+	}
+	
+	.Responsive .messageList .placeholder a.avatar
+	{
+		margin-right: 10px;
+	}
+}
+</xen:if>
