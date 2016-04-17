@@ -1,0 +1,64 @@
+.FileUploader
+{
+	display: block;
+}
+
+.uploadedFile
+{
+	@property "secondaryContent.background";
+	background-color: rgb(255, 255, 255);
+	@property "/secondaryContent.background";;
+
+	border: 1px solid @primaryLighterStill;
+	border-radius: 3px;
+	font-size: 11px;
+	padding: 5px;
+	box-sizing: border-box;
+	margin-right: @ctrlUnitEdgeSpacer;
+
+	display: none;
+}
+
+	.uploadedFile .Delete
+	{
+		float: right;
+		font-weight: bold;
+		line-height: 18px;
+		height: 18px;
+		width: 18px;
+		text-align: center;
+		border-radius: 3px;
+	}
+
+		.uploadedFile .Delete:hover
+		{
+			background: @primaryLighterStill;
+			text-decoration: none;
+		}
+
+.uploadedFile .Progress
+{
+	background: transparent url('styles/awesomefans/xenforo/widgets/ajaxload.info_FFFFFF_facebook.gif') center left no-repeat;
+}
+
+	.uploadedFile .Progress .gauge
+	{
+		border: 1px solid @primaryLighter;
+		border-radius: 3px;
+		background-color: @content.background-color;
+		margin: 0 20px;
+	}
+
+		.uploadedFile .Progress .gauge .Meter
+		{
+			border-radius: 1px;
+			background: @primaryLight none repeat-x top;
+			height: 16px;
+		}
+
+.uploadedFile .Filename
+{
+	line-height: 18px;
+	height: 18px;
+	padding: 0 5px;
+}
