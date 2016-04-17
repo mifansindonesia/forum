@@ -1,0 +1,124 @@
+/* the attached files block is intended to appear like a bb code block */
+
+.attachedFiles
+{
+	@property "bbCodeBlock";
+	margin: 1em @messageInfo.margin-left 1em 0;
+	border: 1px solid rgb(232, 232, 232);
+	border-radius: @fa_borderradiuss;
+	overflow: auto;
+	width: 99%;
+	@property "/bbCodeBlock";
+}
+
+.messageList.withSidebar .attachedFiles
+{
+	margin-right: 0px;
+}
+
+	.attachedFiles .attachedFilesHeader
+	{
+		@property "bbCodeBlockType";
+		font-size: 11px;
+		font-family: @body.font-family;
+		color: @primaryLight;
+		background-color: rgb(255, 255, 255);
+		padding: 7px 8px;
+		border-bottom: 1px solid rgb(232, 232, 232);
+		border-top-left-radius: @fa_borderradiuss;
+		border-top-right-radius: @fa_borderradiuss;
+		@property "/bbCodeBlockType";
+		
+		padding: 4px 8px;
+	}
+
+	.attachedFiles .attachmentList
+	{
+		/* roughly the same as "bbCodeCode" with the monospacing stuff removed */
+		overflow: hidden; zoom: 1;		
+		padding: 10px 10px 0;
+		background-color: @primaryLightest;
+		border-radius: 5px;
+	}
+
+		.attachment
+		{
+			float: left;
+			width: 50%;
+			max-width: 300px;
+		}
+		
+		.attachment .boxModelFixer
+		{
+			overflow: hidden; zoom: 1;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			padding: 5px;				
+			background-color: @contentBackground;
+			border: 1px solid @primaryLighterStill;
+			border-radius: 5px;	
+		}
+		
+			<xen:set var="$attachThumbSize">{xen:calc 'min(100, {$xenOptions.attachmentThumbnailDimensions} / 2)'}px</xen:set>
+		
+			.attachment .thumbnail
+			{
+				float: left;						
+				border-right: 1px solid @primaryLighterStill;
+				padding-right: 5px;
+				width: {$attachThumbSize};
+				height: {$attachThumbSize};
+				overflow: hidden;
+			}
+			
+				.attachment .thumbnail .SquareThumb
+				{
+					width: {$attachThumbSize};
+					height: {$attachThumbSize};
+					border-radius: 3px;
+				}
+				
+				.attachment .thumbnail .genericAttachment
+				{
+					@property "genericAttachmentThumb";
+					background-color: transparent;
+					display: block;
+					width: 36px;
+					height: 36px;
+					@property "/genericAttachmentThumb";
+					
+					margin: {xen:calc '({$xenOptions.attachmentThumbnailDimensions} / 2 - @genericAttachmentThumb.height) / 2'}px {xen:calc '({$xenOptions.attachmentThumbnailDimensions} / 2 - @genericAttachmentThumb.width) / 2'}px !important;
+				}
+			
+		.attachment .attachmentInfo
+		{
+			white-space: nowrap;
+			overflow: hidden; zoom: 1;
+			font-size: 11px;
+			padding-left: 5px;
+		}
+		
+			.attachment .attachmentInfo .filename
+			{
+				text-overflow: ellipsis;
+				overflow: hidden;
+				max-width: 100%;
+			}
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveWideWidth)
+{
+	.Responsive .attachedFiles
+	{
+		margin-right: 0;
+	}
+}
+
+@media (max-width:@maxResponsiveMediumWidth)
+{
+	html.Responsive .attachment
+	{
+		width: 100%;
+	}
+}
+</xen:if>
