@@ -1,0 +1,109 @@
+#searchBar
+{
+	position: relative;
+	zoom: 1;
+	z-index: 52; /* higher than breadcrumb arrows */
+}
+
+	#QuickSearchPlaceholder
+	{
+		position: absolute;
+		right: 20px;
+		top: {xen:calc '-1 * (@headerTabHeight / 2 + 19 / 2)'}px;
+		display: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 17px;
+		box-sizing: border-box;
+		color: @contentBackground;
+	}
+
+	#QuickSearch
+	{
+		display: block;
+		
+		position: absolute;
+		right: 20px;
+		top: -18px;
+		
+		margin: 0;
+		
+		background-color: @content.background-color;
+		border-radius: 5px;
+		padding-top: 5px;
+		_padding-top: 3px;
+		z-index: 7500;
+	}
+			
+		#QuickSearch .secondaryControls
+		{
+			display: none;
+		}
+	
+		#QuickSearch.active
+		{
+			box-shadow: 5px 5px 25px rgba(0,0,0, 0.5);
+			padding-bottom: 5px;
+		}
+		
+	#QuickSearch .submitUnit .button
+	{
+		min-width: 0;
+	}
+		
+	#QuickSearch input.button.primary
+	{
+		float: left;
+		width: 110px;
+	}
+	
+	#QuickSearch #commonSearches
+	{
+		float: right;
+	}
+	
+		#QuickSearch #commonSearches .button
+		{
+			width: 23px;
+			padding: 0;
+		}
+		
+			#QuickSearch #commonSearches .arrowWidget
+			{
+				margin: 0;
+				float: left;
+				margin-left: 4px;
+				margin-top: 4px;
+			}
+	
+	#QuickSearch .moreOptions
+	{
+		display: block;
+		margin: 0 24px 0 110px;
+		width: auto;
+	}
+
+<xen:if is="@enableResponsive">
+@media (max-width:@maxResponsiveMediumWidth)
+{
+	.Responsive #QuickSearchPlaceholder
+	{
+		display: block;
+	}
+
+	.Responsive #QuickSearchPlaceholder.hide
+	{
+		display: none;
+	}
+
+	.Responsive #QuickSearch
+	{
+		display: none;
+	}
+
+	.Responsive #QuickSearch.show
+	{
+		display: block;
+	}
+}
+</xen:if>
