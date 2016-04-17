@@ -1,0 +1,40 @@
+.googleLogin,
+#loginBar .googleLogin
+{
+	display: inline-block;
+	width: @eAuthButtonWidth;
+	height: 22px;
+	box-sizing: border-box;
+	cursor: pointer;
+	
+	background-color: #dd4b39;
+	border: #be3e2e solid 1px;
+	border-radius: 3px;
+	padding-left: 2px;
+	
+	color: white;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 14px;
+}
+	.googleLogin .fa
+{
+	float: left;
+	padding: 3px 0 0 5px;
+	font-size: 15px;
+}
+
+	.googleLogin span
+	{
+		display: block;
+		padding: 3px;
+		padding-left: 10px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+.googleLogin:active,
+#loginBar .googleLogin:active
+{
+	background-color: #be3e2e;
+}
