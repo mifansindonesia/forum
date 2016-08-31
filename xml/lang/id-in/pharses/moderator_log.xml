@@ -1,0 +1,82 @@
+  <phrase title="moderate_all_messages_posted_in_this_forum" addon_id="XenForo" version_id="1000036" version_string="1.0.0 Beta 6"><![CDATA[Moderate all messages posted in this forum]]></phrase>
+  <phrase title="moderate_new_threads_posted_in_this_forum" addon_id="XenForo" version_id="1040010" version_string="1.4.0 Alpha"><![CDATA[Moderate new threads posted in this forum]]></phrase>
+  <phrase title="moderate_replies_posted_in_this_forum" addon_id="XenForo" version_id="1040010" version_string="1.4.0 Alpha"><![CDATA[Moderate replies posted in this forum]]></phrase>
+  <phrase title="moderated" addon_id="XenForo" version_id="1000015" version_string="1.0.0 Alpha 5"><![CDATA[Moderated]]></phrase>
+  <phrase title="moderation_actions" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Tindakan]]></phrase>
+  <phrase title="moderation_queue" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Antrian Moderasi]]></phrase>
+  <phrase title="moderation_queue_is_currently_empty" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Keren! Saat ini antrian moderasi kosong.]]></phrase>
+  <phrase title="moderation_queue_short" addon_id="XenForo" version_id="1020010" version_string="1.2.0 Alpha"><![CDATA[Moderation]]></phrase>
+  <phrase title="moderator" addon_id="XenForo" version_id="1000016" version_string="1.0.0 Alpha 6"><![CDATA[Moderator]]></phrase>
+  <phrase title="moderator_actions" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Tindakan Moderator]]></phrase>
+  <phrase title="moderator_editable" addon_id="XenForo" version_id="1030010" version_string="1.3.0 Alpha"><![CDATA[Moderator editable]]></phrase>
+  <phrase title="moderator_log" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Moderator Log]]></phrase>
+  <phrase title="moderator_log_entry" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Moderator Log Entry]]></phrase>
+  <phrase title="moderator_log_post_approve" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Post approved]]></phrase>
+  <phrase title="moderator_log_post_delete_hard" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Mengahapus permanen post]]></phrase>
+  <phrase title="moderator_log_post_delete_soft" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Menghapus post dari publik (alasan: {reason})]]></phrase>
+  <phrase title="moderator_log_post_edit" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Menyunting post]]></phrase>
+  <phrase title="moderator_log_post_merge_target" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Memodif post dgn menggabung post ({ids})]]></phrase>
+  <phrase title="moderator_log_post_unapprove" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Post unapproved]]></phrase>
+  <phrase title="moderator_log_post_undelete" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Post undeleted]]></phrase>
+  <phrase title="moderator_log_profile_post_approve" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Profile post approved]]></phrase>
+  <phrase title="moderator_log_profile_post_comment_approve" addon_id="XenForo" version_id="1050010" version_string="1.5.0 Alpha"><![CDATA[Profile post comment approved]]></phrase>
+  <phrase title="moderator_log_profile_post_comment_delete" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Profile post comment by {username} deleted]]></phrase>
+  <phrase title="moderator_log_profile_post_comment_delete_hard" addon_id="XenForo" version_id="1050010" version_string="1.5.0 Alpha"><![CDATA[Profile post comment permanently deleted]]></phrase>
+  <phrase title="moderator_log_profile_post_comment_delete_soft" addon_id="XenForo" version_id="1050010" version_string="1.5.0 Alpha"><![CDATA[Profile post comment removed from public view (reason: {reason})]]></phrase>
+  <phrase title="moderator_log_profile_post_comment_unapprove" addon_id="XenForo" version_id="1050010" version_string="1.5.0 Alpha"><![CDATA[Profile post comment unapproved]]></phrase>
+  <phrase title="moderator_log_profile_post_comment_undelete" addon_id="XenForo" version_id="1050010" version_string="1.5.0 Alpha"><![CDATA[Profile post comment undeleted]]></phrase>
+  <phrase title="moderator_log_profile_post_delete_hard" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Profile post permanently deleted]]></phrase>
+  <phrase title="moderator_log_profile_post_delete_soft" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Profile post removed from public view (reason: {reason})]]></phrase>
+  <phrase title="moderator_log_profile_post_unapprove" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Profile post unapproved]]></phrase>
+  <phrase title="moderator_log_profile_post_undelete" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Profile post undeleted]]></phrase>
+  <phrase title="moderator_log_resource_approve" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource approved]]></phrase>
+  <phrase title="moderator_log_resource_delete_hard" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource permanently deleted]]></phrase>
+  <phrase title="moderator_log_resource_delete_soft" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource removed from public view (reason: {reason})]]></phrase>
+  <phrase title="moderator_log_resource_edit" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource edited ({elements})]]></phrase>
+  <phrase title="moderator_log_resource_feature" addon_id="XenResource" version_id="1010031" version_string="1.1.0 Beta 1"><![CDATA[Resource featured]]></phrase>
+  <phrase title="moderator_log_resource_prefix" addon_id="XenResource" version_id="1010570" version_string="1.1.5"><![CDATA[Resource prefix edited from '{old}']]></phrase>
+  <phrase title="moderator_log_resource_rating_delete_hard" addon_id="XenResource" version_id="1010031" version_string="1.1.0 Beta 1"><![CDATA[Resource review permanently deleted]]></phrase>
+  <phrase title="moderator_log_resource_rating_delete_response" addon_id="XenResource" version_id="1010031" version_string="1.1.0 Beta 1"><![CDATA[Resource review response deleted]]></phrase>
+  <phrase title="moderator_log_resource_rating_delete_soft" addon_id="XenResource" version_id="1010031" version_string="1.1.0 Beta 1"><![CDATA[Resource review removed from public view]]></phrase>
+  <phrase title="moderator_log_resource_rating_undelete" addon_id="XenResource" version_id="1010031" version_string="1.1.0 Beta 1"><![CDATA[Resource review undeleted]]></phrase>
+  <phrase title="moderator_log_resource_reassign" addon_id="XenResource" version_id="1010031" version_string="1.1.0 Beta 1"><![CDATA[Resource reassigned (from {from})]]></phrase>
+  <phrase title="moderator_log_resource_unapprove" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource unapproved]]></phrase>
+  <phrase title="moderator_log_resource_undelete" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource undeleted]]></phrase>
+  <phrase title="moderator_log_resource_unfeature" addon_id="XenResource" version_id="1010031" version_string="1.1.0 Beta 1"><![CDATA[Resource unfeatured]]></phrase>
+  <phrase title="moderator_log_resource_update_approve" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource update approved]]></phrase>
+  <phrase title="moderator_log_resource_update_delete_hard" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource update permanently deleted]]></phrase>
+  <phrase title="moderator_log_resource_update_delete_soft" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource update removed from public view (reason: {reason})]]></phrase>
+  <phrase title="moderator_log_resource_update_edit" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource update edited ({elements})]]></phrase>
+  <phrase title="moderator_log_resource_update_unapprove" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource update unapproved]]></phrase>
+  <phrase title="moderator_log_resource_version_approve" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource version approved]]></phrase>
+  <phrase title="moderator_log_resource_version_delete_hard" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource version permanently deleted]]></phrase>
+  <phrase title="moderator_log_resource_version_delete_soft" addon_id="XenResource" version_id="1000011" version_string="1.0.0 Alpha 1"><![CDATA[Resource version removed from public view (reason: {reason})]]></phrase>
+  <phrase title="moderator_log_thread_approve" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread approved]]></phrase>
+  <phrase title="moderator_log_thread_delete_hard" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread permanently deleted]]></phrase>
+  <phrase title="moderator_log_thread_delete_soft" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread removed from public view (reason: {reason})]]></phrase>
+  <phrase title="moderator_log_thread_edit" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Trid di edit ({elements})]]></phrase>
+  <phrase title="moderator_log_thread_lock" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread locked]]></phrase>
+  <phrase title="moderator_log_thread_merge_target" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread modified by merging threads ({ids})]]></phrase>
+  <phrase title="moderator_log_thread_move" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Trid ini di pindah dari forum {from}]]></phrase>
+  <phrase title="moderator_log_thread_poll_add" addon_id="XenForo" version_id="1040010" version_string="1.4.0 Alpha"><![CDATA[Thread poll added]]></phrase>
+  <phrase title="moderator_log_thread_poll_edit" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread poll edited]]></phrase>
+  <phrase title="moderator_log_thread_post_copy_source" addon_id="XenForo" version_id="1030010" version_string="1.3.0 Alpha"><![CDATA[Posts from thread copied to <a href="{url}">{title}</a>]]></phrase>
+  <phrase title="moderator_log_thread_post_copy_target" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Membuat trid dari salinan post ({ids})]]></phrase>
+  <phrase title="moderator_log_thread_post_copy_target_existing" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Post ({ids}) di salin ke trid]]></phrase>
+  <phrase title="moderator_log_thread_post_move_source" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Memindah beberapa post ke <a href="{url}">{title}</a>]]></phrase>
+  <phrase title="moderator_log_thread_post_move_target" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread created by moving posts ({ids})]]></phrase>
+  <phrase title="moderator_log_thread_post_move_target_existing" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Posts ({ids}) di pindah]]></phrase>
+  <phrase title="moderator_log_thread_prefix" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Prefix trid di sunting '{old}']]></phrase>
+  <phrase title="moderator_log_thread_reply_ban" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[{name} dilarang membalas trid ini (alasan: {reason})]]></phrase>
+  <phrase title="moderator_log_thread_reply_ban_delete" addon_id="XenForo" version_id="1040010" version_string="1.4.0 Alpha"><![CDATA[{name}'s thread reply ban removed]]></phrase>
+  <phrase title="moderator_log_thread_stick" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Trid di pin]]></phrase>
+  <phrase title="moderator_log_thread_title" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Menyunting judul trid '{old}']]></phrase>
+  <phrase title="moderator_log_thread_unapprove" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread unapproved]]></phrase>
+  <phrase title="moderator_log_thread_undelete" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread undeleted]]></phrase>
+  <phrase title="moderator_log_thread_unlock" addon_id="XenForo" version_id="1010010" version_string="1.1.0 Alpha"><![CDATA[Thread unlocked]]></phrase>
+  <phrase title="moderator_log_thread_unstick" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Trid di unpin]]></phrase>
+  <phrase title="moderator_log_user_spam_clean" addon_id="XenForo" version_id="1050010" version_string="1.5.0 Alpha"><![CDATA[User spam cleaned]]></phrase>
+  <phrase title="moderator_log_user_warn" addon_id="XenForo" version_id="1050010" version_string="1.5.0 Alpha"><![CDATA[User warned (warning: {warning_title})]]></phrase>
+  <phrase title="moderator_tools" addon_id="XenForo" version_id="1050170" version_string="1.5.1"><![CDATA[Alat Moderasi]]></phrase>
+  <phrase title="moderator_user_name" addon_id="XenForo" version_id="1000016" version_string="1.0.0 Alpha 6"><![CDATA[Moderator User Name]]></phrase>
+  <phrase title="moderators" addon_id="XenForo" version_id="1000016" version_string="1.0.0 Alpha 6"><![CDATA[Moderators]]></phrase>
