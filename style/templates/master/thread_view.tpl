@@ -15,16 +15,31 @@
 <xen:container var="$head.canonical">
 	<link rel="canonical" href="{xen:link 'canonical:threads', $thread, 'page={$page}'}" /></xen:container>
 <xen:container var="$head.description">
-	<!- <meta name="description" content="{xen:helper snippet, $firstPost.message, 155}" /> -->
+	<!-- <meta name="description" content="{xen:helper snippet, $firstPost.message, 155}" /> -->
 	<xen:set var="$cleanDesc"><xen:callback class="MMetaDesc_Listener" method="getCleanDesc" params="{xen:helper snippet, $firstPost.message}"></xen:callback></xen:set>
 	<meta name="description" content="{xen:helper snippet, $cleanDesc, 155}" />
 	</xen:container>
-<xen:container var="$head.openGraph"><xen:include template="open_graph_meta">
+<!--<xen:container var="$head.openGraph"><xen:include template="open_graph_meta">
 		<xen:set var="$url">{xen:link 'canonical:threads', $thread}</xen:set>
 		<xen:set var="$title">{xen:helper threadPrefix, $thread, escaped}{$thread.title}</xen:set>
 		<!-- <xen:set var="$description">{xen:helper snippet, $firstPost.message, 155}</xen:set> -->
 		<xen:set var="$description">{xen:helper snippet, $cleanDesc, 155}</xen:set>
 		<xen:set var="$avatar">{xen:helper avatar, $thread, l, 0, 1}</xen:set>
+	</xen:include></xen:container> -->
+<xen:comment>extract first thumbnail URL from first post, for use in open_graph_meta below</xen:comment>
+<xen:if is="{$firstPost.attachments}">
+	<xen:foreach loop="$firstPost.attachments" value="$attachment" i="$i" count="$count">
+		<xen:if is="{$i} == 1 AND {$attachment.thumbnailUrl}">
+			<xen:set var="$ogThumb">{xen:helper fullurl, $attachment.thumbnailUrl, 1}</xen:set>
+		</xen:if>
+	</xen:foreach>
+</xen:if>
+
+<xen:container var="$head.openGraph"><xen:include template="open_graph_meta">
+		<xen:set var="$url">{xen:link 'canonical:threads', $thread}</xen:set>
+		<xen:set var="$title">{$thread.title}</xen:set>
+		<xen:set var="$description">{xen:helper snippet, $cleanDesc, 155}</xen:set>
+		<xen:set var="$avatar"><xen:if is="{$ogThumb}">{$ogThumb}<xen:else />{xen:helper avatar, $thread, l, 0, 1}</xen:if></xen:set>
 	</xen:include></xen:container>
 <xen:container var="$bodyClasses">{xen:helper nodeClasses, $nodeBreadCrumbs, $forum}{xen:if {$xenOptions.selectQuotable}, ' SelectQuotable'}</xen:container>
 <xen:container var="$searchBar.thread"><xen:include template="search_bar_thread_only" /></xen:container>
