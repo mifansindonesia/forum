@@ -1,4 +1,4 @@
-# [![MF](http://mifans.web.id/styles/mifans/xenforo/logo.png)](http://forum.mifans.web.id)
+# [![MF](https://cdn.mifans.web.id/temandoid/logo.svg)](http://forum.mifans.web.id)
 ![ML](https://img.shields.io/badge/Master-Languange-brightgreen.svg)
 ![ST](https://img.shields.io/badge/Template-Style-brightgreen.svg)
 ![EM](https://img.shields.io/badge/Emoji-Code-red.svg)
