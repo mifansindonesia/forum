@@ -13,7 +13,7 @@
 - Fork // No Changed
 - Modifed // Live to join contact @Miyaku
 - Commit with changed
-- Pull Request or Brance
+- Pull Request or Branches
 
 # Lokal
 ## Git Konfigurasi
